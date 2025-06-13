@@ -1,0 +1,16 @@
+---
+const { title = "Handyman Cruz", description = "Reliable handyman services in Perth", image = "/default-og.jpg", url = "https://handymancruz.com" } = Astro.props;
+---
+
+<head>
+  <title>{title}</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content={description} />
+  <meta property="og:title" content={title} />
+  <meta property="og:description" content={description} />
+  <meta property="og:image" content={url + image} />
+  <meta property="og:url" content={url} />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="canonical" href={url} />
+</head>
