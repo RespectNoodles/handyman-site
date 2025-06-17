@@ -2,7 +2,7 @@
   "name": "handyman-site",
   "compatibility_date": "2025-04-01",
   "compatibility_flags": ["nodejs_compat"],
-  "main": "./src/worker/index.js",
+  "main": "./src/pages/index.js",
   "assets": {
     "directory": "./src",
     "binding": "ASSETS"
