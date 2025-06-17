@@ -1,12 +1,15 @@
 ---
 // src/components/Header.astro
 ---
-<header style="background: #007acc; padding: 1rem;">
-  <nav style="max-width: 960px; margin: 0 auto; display: flex; justify-content: center; gap: 2rem;">
-    <a href="/style/" style= "color: white; font-weight: 600; text-decoration: none;">Home</a>
-    <a href="/services/" style="color: white; font-weight: 600; text-decoration: none;">Services</a>
-    <a href="/projects/" style="color: white; font-weight: 600; text-decoration: none;">Projects</a>
-    <a href="/about/" style="color: white; font-weight: 600; text-decoration: none;">About</a>
-    <a href="#contact" style="color: white; font-weight: 600; text-decoration: none;">Contact</a>
-  </nav>
+<header class="header bg-white shadow sticky top-0 z-50">
+  <div class="container mx-auto flex justify-between items-center py-4 px-6">
+    <a href="/" class="text-xl font-bold text-gray-800">Handyman Cruz</a>
+    <nav class="space-x-6">
+      <a href="/" class="hover:text-blue-600">Home</a>
+      <a href="/services" class="hover:text-blue-600">Services</a>
+      <a href="/projects" class="hover:text-blue-600">Projects</a>
+      <a href="/about" class="hover:text-blue-600">About</a>
+      <a href="/contact" class="hover:text-blue-600">Contact</a>
+    </nav>
+  </div>
 </header>
