@@ -1,21 +1,37 @@
 ---
-const { title = "Handyman Cruz", description = "Reliable handyman services in Perth", image = "/default-og.jpg", url = "https://handymancruz.com" } = Astro.props;
+/**
+ * BaseHead.astro
+ * Re‑usable head element for every page.
+ * Pass `title`, `description`, `image`, and `url` props where needed.
+ */
+const {
+  title = 'Handyman Cruz – Reliable handyman services in Perth',
+  description = 'From repairs to renovations, Handyman Cruz delivers professional handyman services across Perth. Get a free quote today!',
+  image = '/assets/Business-card-front.png',
+  url = 'https://handymancruz.com/',
+} = Astro.props;
 ---
 <head>
+  <meta charset="utf-8" />
   <title>{title}</title>
   <meta name="description" content={description} />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  
-  <!-- Open Graph for social sharing -->
+  <link rel="canonical" href={url} />
+
+  <!-- Open Graph -->
+  <meta property="og:site_name" content="Handyman Cruz" />
+  <meta property="og:type" content="website" />
   <meta property="og:title" content={title} />
   <meta property="og:description" content={description} />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://handymancruz.com/" />
-  <meta property="og:image" content="https://handymancruz.com/assets/Business-card-front.png" />
-  
-  <!-- Optional: Twitter card -->
+  <meta property="og:url" content={url} />
+  <meta property="og:image" content={image} />
+
+  <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content={title} />
   <meta name="twitter:description" content={description} />
-  <meta name="twitter:image" content="https://handymancruz.com/assets/Business-card-front.png" />
+  <meta name="twitter:image" content={image} />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="/favicon.png" />
 </head>

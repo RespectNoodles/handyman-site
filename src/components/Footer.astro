@@ -1,17 +1,31 @@
 ---
-const today = new Date();
+const year = new Date().getFullYear();
 ---
-<footer class="footer bg-gray-900 text-white py-8 mt-12">
-  <div class="container mx-auto px-6 text-center">
-    <p class="mb-4">&copy; 2025 Handyman Cruz. All rights reserved.</p>
-    <div class="space-x-4">
-      <a href="/privacy-policy" class="hover:underline">Privacy Policy</a>
-      <a href="/terms" class="hover:underline">Terms & Conditions</a>
-      <a href="https://facebook.com/YOUR_PAGE" target="_blank" rel="noopener" aria-label="Facebook">
-        <svg class="inline h-5 w-5 fill-current text-white hover:text-blue-400" viewBox="0 0 24 24">
-          <path d="M22 12a10 10 0 10-11.5 9.9v-7H8v-3h2.5v-2.3c0-2.4 1.5-3.7 3.6-3.7 1 0 2 .2 2 .2v2.2H15c-1.2 0-1.5.8-1.5 1.5V12H17l-.5 3h-2v7A10 10 0 0022 12z" />
+<footer class="bg-gray-900 text-white py-10 mt-16">
+  <div class="container mx-auto px-6 text-center space-y-6">
+    <!-- Social -->
+    <div class="flex justify-center gap-4">
+      <a
+        href="https://www.facebook.com/handymancruz"
+        target="_blank"
+        rel="noopener"
+        aria-label="Handyman Cruz on Facebook"
+        class="hover:text-blue-400 transition-colors"
+      >
+        <!-- Facebook Icon -->
+        <svg class="h-6 w-6 fill-current" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M22 12a10 10 0 10-11.5 9.9v-7H8v-3h2.5V9.6c0-2.3 1.4-3.6 3.6-3.6 1 0 2 .1 2 .1v2.3H15c-1.1 0-1.4.7-1.4 1.4V12H17l-.4 3h-2v7A10 10 0 0022 12z"/>
         </svg>
       </a>
     </div>
+
+    <!-- Legal Links -->
+    <div class="space-x-6">
+      <a href="/privacy-policy" class="hover:underline">Privacy Policy</a>
+      <a href="/terms" class="hover:underline">Terms & Conditions</a>
+    </div>
+
+    <!-- Copyright -->
+    <p class="text-sm text-gray-400">&copy; {year} Handyman Cruz. All rights reserved.</p>
   </div>
 </footer>
