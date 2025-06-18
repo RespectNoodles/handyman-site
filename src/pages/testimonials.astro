@@ -1,70 +1,40 @@
 ---
-import BaseHead from '@/components/BaseHead.astro';
-import Header   from '@/components/Header.astro';
-import Footer   from '@/components/Footer.astro';
-
-/* Simple testimonials data */
-const testimonials = [
-  {
-    quote: "“Cruz transformed our tired deck into a weekend paradise — punctual, tidy, and a dead‑set craftsman.”",
-    name:  "Michelle T., Fremantle"
-  },
-  {
-    quote: "“Amazing creativity with recycled timber. The new fence is both eco‑friendly and a talking point!”",
-    name:  "Ben D., Subiaco"
-  },
-  {
-    quote: "“Fast response, transparent pricing, and zero mess left behind. Can’t recommend Cruz highly enough.”",
-    name:  "Asha K., Joondalup"
-  },
-  {
-    quote: "“Our café revamp stayed on budget and finished early. The rustic shelving he built is Instagram gold.”",
-    name:  "Felix G., Leederville"
-  }
-];
+import Layout from '../layouts/Layout.astro';
+import BaseHead from '../components/BaseHead.astro';
+import ParallaxHero from '../components/ParallaxHero.astro';
 ---
 
-<BaseHead
-  title="Testimonials – Handyman Cruz"
-  description="Real feedback from happy clients who trusted Handyman Cruz for their projects."
-/>
+<Layout title="Testimonials – Handyman Cruz">
+  <BaseHead title="Testimonials – Handyman Cruz" description="Hear what past clients say about the quality and care of my work." />
+  <ParallaxHero title="Testimonials" subtitle="What clients are saying about my work" />
 
-<style is:global>
-  /* Fade‑in animation */
-  .fade-in   { opacity: 0; transform: translateY(20px); transition: opacity .6s, transform .6s; }
-  .fade-show { opacity: 1; transform: translateY(0);    }
-</style>
-
-<body class="bg-gradient-to-br from-gray-900 via-gray-800 to-gray-700 text-gray-100 min-h-screen">
-  <Header />
-
-  <main class="max-w-3xl mx-auto px-6 py-16 space-y-12">
-    <h1 class="text-4xl font-extrabold text-center mb-12">What Clients Say</h1>
-
-    <!-- Testimonial cards -->
-    {testimonials.map((t, idx) => (
-      <blockquote
-        class="fade-in bg-gray-800/60 backdrop-blur-md rounded-lg p-8 shadow-lg"
-        data-idx={idx}
-      >
-        <p class="text-xl md:text-2xl mb-4 italic">{t.quote}</p>
-        <footer class="text-blue-300 font-semibold">{t.name}</footer>
+  <section class="max-w-5xl mx-auto p-8 grid gap-8 md:grid-cols-2 lg:grid-cols-3 my-12">
+    {[
+      {
+        quote: "Cruz transformed our back patio. Professional, quick, and top-notch work!",
+        name: "— Sophie T., Midland",
+      },
+      {
+        quote: "You rarely meet tradies this reliable. Always on time and polite.",
+        name: "— Marcus D., Ellenbrook",
+      },
+      {
+        quote: "Gave life to our backyard fence — it’s better than new. Highly recommend!",
+        name: "— Leila & Tom, Bayswater",
+      },
+      {
+        quote: "Trustworthy, skilled, and genuinely cares about the job — Cruz is a gem.",
+        name: "— Trevor G., Dianella",
+      },
+      {
+        quote: "We’ve used Handyman Cruz for everything from shelves to sealing leaks. Never disappoints.",
+        name: "— Carol N., Morley",
+      },
+    ].map(({ quote, name }) => (
+      <blockquote class="bg-white p-6 rounded-lg shadow-md text-gray-800">
+        <p class="mb-4">“{quote}”</p>
+        <cite class="text-gray-600 italic">{name}</cite>
       </blockquote>
     ))}
-  </main>
-
-  <Footer />
-
-  <script>
-    /* IntersectionObserver to reveal each card on scroll */
-    const observer = new IntersectionObserver(
-      entries => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) entry.target.classList.add('fade-show');
-        });
-      },
-      { threshold: 0.2 }
-    );
-    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
-  </script>
-</body>
+  </section>
+</Layout>

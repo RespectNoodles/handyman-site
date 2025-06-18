@@ -1,122 +1,196 @@
 ---
-// src/pages/index.astro
-import Layout from '../layouts/Layout.astro';
-import BaseHead from '../components/BaseHead.astro';
+/* ------------------------------------------
+   src/pages/index.astro     (Home Page)
+   ------------------------------------------ */
+import Layout      from '../layouts/Layout.astro';
+import BaseHead    from '../components/BaseHead.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts.js';
+import QuoteForm   from '../components/QuoteForm.astro';
+import FAQSection from '../components/FAQSection.astro';
 
-layout: Layout;
+/* If you add arrays for Services or Projects in src/data later,
+   you can import and loop over them here: */
+// import { services }   from '@/data/services.js';
+// import { projectData } from '@/data/projects.js';
 ---
+<QuoteForm id="quote" />
+layout: Layout
 
 <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
 
-<!-- ⭐ Hero / Top Banner -->
-<section class="relative h-[500px] bg-cover bg-center bg-no-repeat" 
-style="background-image: url('/images/texture-wood.jpg');">
-  <div class="absolute inset-0 bg-black bg-opacity-70 flex items-center justify-center">
-    <div class="text-center px-6">
-      <h1 class="text-4xl md:text-5xl font-bold text-white drop-shadow-lg">Welcome to Handyman Cruz</h1>
-      <p class="text-gray-300 mt-4 text-xl max-w-xl mx-auto">Where creativity & determination meets modern service.</p>
-      <a class="bg-rust text-white font-semibold px-5 py-2 rounded hover:bg-orange-900 transition" href="#quote">Request a Free Quote</a>
- <br>
-  <a href="#" class="text-rust hover:underline">Read More</a>
-  </div>
-    </div>
-</section>
+<!-- =====================  HERO  ===================== -->
 
+<section id="top" class="relative h-[450px] overflow-hidden">
+  <!-- Parallax background -->
+  <div
+    class="absolute inset-0 bg-cover bg-center bg-fixed"
+    style="background-image: url('/images/texture-wood.jpg');"
+  ></div>
 
-<main>
-  <!-- Business Cards -->
-  <section class="relative h-[500px] bg-cover bg-repeat" 
-  style="background-image: url('/images/texture-wood.jpg');">
-  <div class="absolute inset-500 bg-opacity-20 flex items-center justify-center">
-    <div class="text-center px-6">
-  <h2 class="text-4xl md:text-5xl font-bold text-white">Quick Details:</h2>
-  <img src="/assets/Business-card-front.png" alt="Business Card Front" loading="lazy" />
-  <img src="/assets/Business-card-back.png"  alt="Business Card Back"  loading="lazy" />
-  </section>
+  <!-- Animated gradient overlay -->
+  <div
+    class="absolute inset-0"
+    style="
+      background: linear-gradient(120deg, rgba(0,0,0,0.7), rgba(0,0,0,0.9));
+      animation: bg-move 15s ease-in-out infinite alternate;
+    "
+  ></div>
 
-  <!-- Testimonials + Project Cards -->
-    <section class="testimonials" id="testimonials">
-      <h2>What People Say</h2>
-      <blockquote>"Cruz fixed our fence in no time and even cleaned up after. Super reliable!"
-        <cite>— Jake M., Glenroy</cite>
-      </blockquote>
-    <blockquote>"Professional, fast, and friendly. I’d definitely call him again."
-      <cite>— Sal L., Craigieburn</cite>
-    </blockquote>
-      <blockquote>"Fair price and quality work. Highly recommended."
-        <cite>— Teresa F., Roxburgh Park</cite>
-      </blockquote>
-    </section>
-
-  <section class="bg-neutral-800 text-neutral-100 rounded-lg shadow-md ...">
-  <h2 class="text-3xl font-bold text-center text-gray-900 mb-10">My Recent Work</h2>
-  <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3 max-w-6xl mx-auto">
-    <div class="bg-white rounded-lg shadow-md overflow-hidden transition-transform hover:scale-[1.02]">
-      <img src="/images/sample-project1.jpg" alt="Deck Build" class="w-full h-48 object-cover" />
-      <div class="p-4">
-        <h3 class="text-xl font-semibold text-gray-800">Timber Deck Build</h3>
-        <p class="text-gray-600 mt-2">Built a modern timber deck with strong foundations and smooth finish.</p>
-      </div>
-    </div>
-    <div class="bg-white rounded-lg shadow-md overflow-hidden transition-transform hover:scale-[1.02]">
-      <img src="/images/sample-project2.jpg" alt="Fence Repair" class="w-full h-48 object-cover" />
-      <div class="p-4">
-        <h3 class="text-xl font-semibold text-gray-800">Fence Repair</h3>
-        <p class="text-gray-600 mt-2">Repaired and reinforced a damaged boundary fence after storm damage.</p>
-      </div>
-    </div>
-    <div class="bg-white rounded-lg shadow-md overflow-hidden transition-transform hover:scale-[1.02]">
-      <img src="/images/sample-project3.jpg" alt="Tiling Job" class="w-full h-48 object-cover" />
-      <div class="p-4">
-        <h3 class="text-xl font-semibold text-gray-800">Outdoor Tiling</h3>
-        <p class="text-gray-600 mt-2">Completed outdoor tiling for patio using anti-slip stone tiles.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Quote Form -->
-<section id="quote" class="bg-white rounded-lg shadow-lg p-6 my-10">
-  <h2 class="text-2xl font-bold text-center text-blue-700 mb-4">Request a Free Quote</h2>
-  <form action="#" method="POST" class="grid grid-cols-1 gap-4 max-w-xl mx-auto">
-    <input type="text" name="name" placeholder="Your Name" class="p-3 rounded border border-gray-300" required />
-    <input type="email" name="email" placeholder="Your Email" class="p-3 rounded border border-gray-300" required />
-    <textarea name="message" placeholder="Describe the job..." rows="4" class="p-3 rounded border border-gray-300" required></textarea>
-    <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Send Request</button>
-  </form>
-</section>
-<!-- Contact Info -->
-<section class="contact-info" id="contact">
-  <h2>Contact Me</h2>
-  <p>📞 <a href="tel:+61427706676">+61 427 706 676</a></p>
-  <p>📧 <a href="mailto:handymancruz3@gmail.com">handymancruz3@gmail.com</a></p>
-</section>
-
-  <!-- Why Choose Me -->
-  <section class="px-6 md:px-10 py-12 space-y-16">
-    <h2>Why Choose Me?</h2>
-    <img
-      src="/images/tools.jpg"
-      alt="Handyman tools laid out"
-      width="800"
-      height="500"
-      loading="lazy"
-      decoding="async"
-    />
-    <p>
-      • 5 + years hands‑on trade experience<br />
-      • Fully insured &amp; safety‑focused<br />
-      • Transparent pricing — no hidden costs<br />
-      • Friendly, punctual, and trustworthy service
+  <!-- Hero content -->
+  <div class="relative z-10 flex flex-col items-center justify-center h-full">
+    <h1 class="text-4xl md:text-5xl font-extrabold text-yellow-400 drop-shadow-lg">
+      Welcome to Handyman Cruz
+    </h1>
+    <p class="mt-4 text-lg md:text-xl max-w-xl text-neutral-200 text-center">
+      Reliable, rustic craftsmanship with a professional edge. Let’s build something great.
     </p>
+    <a
+      href="#quote"
+      class="mt-8 inline-block bg-orange-600 hover:bg-orange-700 text-white font-semibold px-6 py-3 rounded shadow transition"
+    >
+      Request a Free Quote
+    </a>
+  </div>
+
+  <!-- Gradient Animation Keyframes -->
+  <style is:global>
+    @keyframes bg-move {
+      0% { background-position: 0% 0%; }
+      100% { background-position: 100% 100%; }
+    }
+  </style>
+</section>
+
+<main class="max-w-6xl mx-auto px-6 md:px-10 py-16 space-y-16">
+
+  <!-- ===============  WHY CHOOSE ME  =============== -->
+  <section class="bg-neutral-800 rounded-lg p-8 shadow-lg">
+    <h2 class="text-3xl font-bold text-yellow-400 mb-6">Why Choose Me?</h2>
+    <div class="md:flex md:items-center md:gap-8">
+      <img
+        src="/images/tools.jpg"
+        alt="Handyman tools laid out"
+        class="md:w-1/2 rounded-lg mb-6 md:mb-0 shadow-md"
+        loading="lazy"
+      />
+      <ul class="text-neutral-300 text-lg space-y-3 list-disc list-inside">
+        <li>5 + years hands‑on trade experience</li>
+        <li>Fully insured &amp; safety‑focused</li>
+        <li>Transparent pricing — no hidden costs</li>
+        <li>Friendly, punctual, and trustworthy service</li>
+      </ul>
+    </div>
   </section>
 
-  <!-- Social -->
-  <section class="socials">
-    <h2>Follow Me</h2>
-    <a href="https://www.facebook.com/handymancruz" target="_blank" rel="noopener">
-      🔵 Facebook
-    </a>
+  <!-- ===============  SERVICE SNAPSHOT  =============== -->
+  <section class="bg-bark/90 rounded-lg p-8 shadow-lg">
+    <h2 class="text-3xl font-bold text-yellow-400 mb-8">Core Services</h2>
+
+    <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+      <!-- Service card 1 -->
+      <a href="/services/general-repairs" class="group bg-neutral-800 rounded-lg p-6 shadow transition hover:shadow-xl">
+        <h3 class="text-xl font-semibold text-yellow-300 mb-2">General Repairs</h3>
+        <p class="text-neutral-200 group-hover:text-neutral-100">
+          Quick fixes for doors, walls, taps, and everything in between.
+        </p>
+      </a>
+
+      <!-- Service card 2 -->
+      <a href="/services/tiling-grouting" class="group bg-neutral-800 rounded-lg p-6 shadow transition hover:shadow-xl">
+        <h3 class="text-xl font-semibold text-yellow-300 mb-2">Tiling & Grouting</h3>
+        <p class="text-neutral-200 group-hover:text-neutral-100">
+          Crack repairs, regrouting, and waterproof tiling that lasts.
+        </p>
+      </a>
+
+      <!-- Service card 3 -->
+      <a href="/services/concreting-paving" 
+      class="group bg-neutral-800 rounded-lg p-6 shadow transition hover:shadow-xl">
+        <h3 class="text-xl font-semibold text-yellow-300 mb-2">Concreting & Paving</h3>
+        <p class="text-neutral-200 group-hover:text-neutral-100">
+          Patios, pathways, and solid slab work built to endure.
+        </p>
+      </a>
+    </div>
+
+    <!-- 🚀  If you later import dynamic `services` array,
+             map over it here instead of hard‑coding cards. -->
   </section>
+
+  <!-- ===============  PROJECT HIGHLIGHTS  =============== -->
+
+<section class="my-16 px-4 md:px-0">
+  <h2 class="text-3xl font-bold text-center text-yellow-400 mb-10">My Recent Work</h2>
+  <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3 max-w-6xl mx-auto">
+    {[
+      {
+        src: '/images/sample-project1.jpg',
+        title: 'Timber Deck Build',
+        desc: 'Built a modern timber deck with strong foundations and smooth finish.',
+      },
+      {
+        src: '/images/sample-project2.jpg',
+        title: 'Fence Repair',
+        desc: 'Repaired and reinforced a damaged boundary fence after storm damage.',
+      },
+      {
+        src: '/images/sample-project3.jpg',
+        title: 'Outdoor Tiling',
+        desc: 'Completed outdoor tiling for patio using anti-slip stone tiles.',
+      },
+    ].map(project => (
+      <div class="bg-white/10 backdrop-blur-md rounded-lg shadow-md overflow-hidden transition-transform hover:scale-[1.02]">
+        <div class="aspect-[4/3] overflow-hidden">
+          <img
+            src={project.src}
+            alt={project.title}
+            class="w-full h-full object-cover transition-transform hover:scale-105"
+          />
+        </div>
+        <div class="p-4">
+          <h3 class="text-xl font-semibold text-yellow-300">{project.title}</h3>
+          <p class="text-gray-300 mt-2 text-sm">{project.desc}</p>
+        </div>
+      </div>
+    ))}
+
+    <!-- (Optional) Add a “See More Projects” button -->
+    <div class="text-center mt-10">
+      <a href="/projects" class="bg-orange-600 hover:bg-orange-700 text-white px-6 py-3 rounded shadow transition">
+        View All Projects
+      </a>
+    </div>
+  </section>
+
+  <!-- ===============  QUOTE FORM  =============== -->
+  <section id="quote" class="bg-neutral-800 rounded-lg p-8 shadow-lg">
+    <h2 class="text-3xl font-bold text-yellow-400 mb-6 text-center">Request a Free Quote</h2>
+
+    <form action="#" method="POST" class="grid gap-4 max-w-lg mx-auto">
+      <input type="text"     name="name"    placeholder="Your Name"    class="p-3 rounded bg-neutral-700 border border-neutral-600" required />
+      <input type="email"    name="email"   placeholder="Your Email"   class="p-3 rounded bg-neutral-700 border border-neutral-600" required />
+      <textarea name="message" placeholder="Describe the job…" rows="4" class="p-3 rounded bg-neutral-700 border border-neutral-600" required></textarea>
+      <button type="submit" class="bg-orange-600 hover:bg-orange-700 text-white font-semibold py-2 rounded transition">
+        Send Request
+      </button>
+    </form>
+  </section>
+
+  <!-- =============  FAQ Section ============= -->
+  <!--
+    <FAQSection
+      faqList={[
+        { q: 'Do you charge call‑out fees?', a: 'No. Quotes are free within the Perth metro area.' },
+         { q: 'Are you fully insured?', a: 'Yes — public liability and personal accident cover.' },
+           { q: 'Which payment methods do you accept?', a: 'Cash, EFT, and all major cards.' },
+       ]}
+  />
+
+  <!-- =========  FUTURE SECTION PLACEHOLDERS ========= -->
+  <!-- 
+  <section id="faqs">Coming soon…</section>
+  <section id="blog-feed">Coming soon…</section>
+  -->
+
 </main>
+

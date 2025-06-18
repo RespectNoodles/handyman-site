@@ -1,0 +1,14 @@
+---
+/* Accepts “faqList” prop: [{q:'', a:''}, …] */
+const { faqList = [] } = Astro.props;
+---
+<section id="faq" class="max-w-3xl mx-auto bg-neutral-800 p-8 rounded-lg shadow-lg fade-in space-y-4">
+  <h2 class="text-3xl font-bold text-yellow-400 mb-4 text-center">Frequently Asked Questions</h2>
+
+  {faqList.map(({ q, a }) => (
+    <details class="bg-neutral-700 rounded-lg p-4">
+      <summary class="cursor-pointer font-semibold text-yellow-300">{q}</summary>
+      <p class="mt-2 text-neutral-200">{a}</p>
+    </details>
+  ))}
+</section>

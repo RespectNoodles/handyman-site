@@ -1,95 +1,31 @@
 ---
-import BaseHead from '@/components/BaseHead.astro';
-import Header   from '@/components/Header.astro';
-import Footer   from '@/components/Footer.astro';
+import Layout from '../layouts/Layout.astro';
+import BaseHead from '../components/BaseHead.astro';
+import ParallaxHero from '../components/ParallaxHero.astro';
 ---
 
-<BaseHead
-  title="About – Handyman Cruz"
-  description="Discover Cruz's journey from globetrotting builder to Perth’s go‑to handyman."
-/>
+<Layout title="About – Handyman Cruz">
+  <BaseHead title="About Me – Handyman Cruz" description="Get to know the story, skills, and values behind Handyman Cruz." />
+  <ParallaxHero title="About Me" subtitle="From global grit to local greatness." />
 
-<body class="bg-gradient-to-br from-gray-900 via-gray-800 to-gray-700 text-gray-100 min-h-screen leading-relaxed">
-  <Header />
+  <section class="max-w-4xl mx-auto bg-white text-gray-800 p-8 rounded-lg shadow-md my-12">
+    <h2 class="text-2xl font-bold mb-4">My Journey</h2>
+    <p class="mb-6">
+      I’ve travelled the world, hammer in hand. From rebuilding hurricane-struck rooftops in rural Fiji to restoring stonework in a remote Turkish village, I’ve worked across cultures and climates. These hands have scraped, lifted, cut, and carved stories into every beam and board I’ve touched.
+    </p>
 
-  <main class="max-w-4xl mx-auto px-6 py-12 space-y-12">
-    <section class="text-center">
-      <h1 class="text-5xl font-extrabold mb-4 drop-shadow-lg">About Me</h1>
-      <p class="text-xl text-gray-300 max-w-2xl mx-auto">
-        From battling monsoons in bamboo huts to braving scorching desert builds, my toolbox has clocked more air
-        miles than most suitcases. I’m Cruz — a worldly handyman with a rustic soul and a professional edge.
-      </p>
-    </section>
+    <p class="mb-6">
+      I've laboured in 40-degree heat with no power tools, built fences from scratch in South American hillsides, and learned the art of old-school tradecraft from seasoned builders in Eastern Europe. But it wasn’t until I returned home that I found my true purpose: using my global experience to help everyday Aussies with reliable, down-to-earth handyman services.
+    </p>
 
-    <!-- 1000‑word storytelling bloc -->
-    <article class="space-y-8 text-gray-200 text-lg">
-      <p>
-        I hammered my very first nail on the red‑dust plains outside Alice Springs, helping my grandfather shore up a
-        weather‑worn sheep station fence. The timber was splintered, the sun merciless, but the moment that post hit
-        plumb, something inside me clicked into place. That mix of sweat, sawdust, and simple satisfaction sparked a
-        lifelong love affair with tools, timber, and the quiet pride of a job well done.
-      </p>
+    <p class="mb-6">
+      Handyman Cruz isn’t just a name — it’s my promise. A promise that every project, no matter the size, will be approached with heart, honesty, and handcrafted care. I’m not just here to get the job done; I’m here to make your space feel stronger, safer, and more ‘you’.
+    </p>
 
-      <p>
-        Wanderlust would not let me settle. I backpacked through Southeast Asia, where I learned the art of bamboo
-        joinery from craftsmen who build entire homes with nothing but hand tools and ingenuity. In the Philippines, I
-        helped reconstruct typhoon‑damaged roofs, balancing on rafters while coconut palms bowed in the wind — the
-        locals joked I was part monkey, part carpenter. In Nepal, altitude became my adversary as we rebuilt mountain
-        tea‑houses, each plank hauled up by mule or on weary shoulders. Those thin‑air lessons forged patience thicker
-        than hardwood.
-      </p>
+    <p class="mb-6">
+      If you're looking for someone who listens first, works cleanly, shows up on time, and truly gives a damn — I’d love to help.
+    </p>
 
-      <p>
-        Europe called next. I restored century‑old shutters in the lavender fields of Provence, matching faded cedar
-        with custom stains until the grain popped like art. In the Scottish Highlands, I wrestled stone walls back
-        together, each granite block a puzzle piece holding generations of stories. Evenings were spent trading jokes
-        with crofters over drams of whisky — proof that a good laugh is universal mortar.
-      </p>
-
-      <p>
-        I thought the Aussie Outback harsh until I landed a contract on an offshore rig in the North Sea. Imagine
-        changing corroded fittings while icy spray needles your face and the deck lurches like a roller‑coaster.
-        Forget gym memberships — torqueing bolts against gale‑force winds chisels muscles and grit in equal measure.
-      </p>
-
-      <p>
-        Those adventures sharpened more than my chisels. They taught me that craftsmanship is a global language and
-        professionalism a universal currency. Every culture emphasised two truths:
-        <strong class="text-blue-400">measure twice, cut once</strong> and
-        <strong class="text-blue-400">treat clients as neighbours</strong>.
-      </p>
-
-      <p>
-        Perth eventually lured me home with its endless skies and community spirit. Today, Handyman Cruz blends worldly
-        skill with down‑to‑earth service. From recycled‑timber fences that whisper stories of sustainability, to
-        bespoke blinds finished with a varnish recipe I learned in a Croatian boatyard, my portfolio is equal parts
-        craft and creativity.
-      </p>
-
-      <p>
-        Safety is my North Star. I’m fully insured, continuously up‑skilling, and I approach
-        every site — whether a backyard deck or a high‑ceiling art install — with the same disciplined checklist I used
-        offshore. Your home is your harbour; my job is to keep it shipshape.
-      </p>
-
-      <p>
-        When I’m not on the tools, you’ll find me volunteering at local men’s sheds, mentoring teens on practical trade
-        skills, or scouring salvage yards for timber with “character.” My workshop radio is permanently tuned to classic
-        rock, and I still sharpen chisels by hand because patience leaves the cleanest edge.
-      </p>
-
-      <p>
-        So, whether you need a quick fix that won’t fall apart in a fortnight, a creative twist on a tired patio, or a
-        full‑scale renovation steered with steady hands, I’m your guy. Let’s craft something solid, sustainable, and
-        story‑worthy — together.
-      </p>
-
-      <p class="font-semibold text-blue-300">
-        Drop me a line, share your vision, and I’ll bring the tools, the tea, and a work ethic tempered on four
-        continents.
-      </p>
-    </article>
-  </main>
-
-  <Footer />
-</body>
+    <p class="italic text-gray-600">Let’s build something worth remembering.</p>
+  </section>
+</Layout>
