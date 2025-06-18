@@ -16,7 +16,7 @@
             "type": "cmake",
             "request": "launch",
             "name": "CMake: Build project",
-            "cmakeDebugType": "build",
+            "cmakeDebugType": "configure",
             "clean": false,
             "configureAll": false
         },
@@ -24,7 +24,7 @@
             "type": "cmake",
             "request": "launch",
             "name": "CMake: Run project",
-            "cmakeDebugType": "run",
+            "cmakeDebugType": "configure",
             "clean": false,
             "configureAll": false
         },
@@ -36,16 +36,8 @@
             "outFiles": [
                 "${workspaceFolder}/out/**/*.js"
             ],
-            "console": "integratedTerminal"
-        },
-        {
-            "name": "Attach",
-            "port": 9229,
-            "request": "attach",
-            "skipFiles": [
-                "<node_internals>/**"
-            ],
-            "type": "node"
+            "console": "integratedTerminal",
+            "internalConsoleOptions": "neverOpen",
         },
         {
             "args": [
@@ -69,7 +61,9 @@
                 "--ext",
                 ".js,.jsx,.ts,.tsx",
                 "."
-            ]
+                    ]
+                }
+            }
         },
         {
             "name": "Run Prettier",
@@ -116,5 +110,3 @@
             "console": "integratedTerminal"
         }
     ]
-]
-// Add your configurations here.
