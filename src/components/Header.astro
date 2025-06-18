@@ -1,38 +1,55 @@
 ---
 import HeaderLink from './HeaderLink.astro';
 let isOpen = false;
-const toggleMenu = () => { isOpen = !isOpen };
+const toggleMenu = () => {
+  isOpen = !isOpen;
+};
 ---
+
 <header class="bg-white shadow-md sticky top-0 z-50">
-  <div class="max-w-5xl mx-auto px-6 py-4 flex items-center justify-between">
-    <a href="/" class="text-2xl font-extrabold text-gray-800">Handyman Cruz</a>
+  <div class="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
+    <a href="/" class="text-2xl font-bold tracking-wide text-blue-700">Handyman Cruz</a>
 
-    <button
-      class="md:hidden text-gray-800 focus:outline-none"
-      onClick={toggleMenu}
-      aria-label="Toggle menu"
-    >
-      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-              d={isOpen ? 'M6 18L18 6M6 6l12 12' : 'M4 6h16M4 12h16M4 18h16'} />
-      </svg>
-    </button>
-
-    <nav class="hidden md:flex space-x-8 text-gray-700 font-medium">
+    <!-- Desktop Nav -->
+    <nav class="hidden md:flex gap-8 text-gray-700 font-medium">
       <HeaderLink href="/">Home</HeaderLink>
       <HeaderLink href="/services">Services</HeaderLink>
       <HeaderLink href="/projects">Projects</HeaderLink>
       <HeaderLink href="/about">About</HeaderLink>
       <HeaderLink href="/contact">Contact</HeaderLink>
       <HeaderLink href="#testimonials">Testimonials</HeaderLink>
-      <HeaderLink href="#quote" class="bg-blue-600 text-white px-3 py-2 rounded-lg hover:bg-blue-700">Quote</HeaderLink>
+      <a href="#quote" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition">Quote</a>
     </nav>
+
+    <!-- Mobile Menu Button -->
+    <button
+      onClick={toggleMenu}
+      class="md:hidden text-gray-800 focus:outline-none"
+      aria-label="Toggle navigation"
+    >
+      <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d={isOpen ? 'M6 18L18 6M6 6l12 12' : 'M4 6h16M4 12h16M4 18h16'}
+        />
+      </svg>
+    </button>
   </div>
 
-  <nav class={`md:hidden bg-white overflow-hidden transition-all duration-300 ${isOpen ? 'max-h-screen p-4' : 'max-h-0'}`}>
-    <ul class="flex flex-col space-y-3 text-gray-700 font-medium">
+  <!-- Mobile Dropdown Menu -->
+  <nav class={`md:hidden bg-white transition-all duration-300 overflow-hidden ${isOpen ? 'max-h-screen p-4' : 'max-h-0 p-0'}`}>
+    <ul class="flex flex-col gap-4 text-gray-800 font-medium">
       <li><HeaderLink href="/">Home</HeaderLink></li>
       <li><HeaderLink href="/services">Services</HeaderLink></li>
       <li><HeaderLink href="/projects">Projects</HeaderLink></li>
       <li><HeaderLink href="/about">About</HeaderLink></li>
-      <li><
+      <li><HeaderLink href="/contact">Contact</HeaderLink></li>
+      <li><HeaderLink href="#testimonials">Testimonials</HeaderLink></li>
+      <li>
+        <a href="#quote" class="block bg-blue-600 text-white px-4 py-2 rounded-lg text-center hover:bg-blue-700 transition">Request a Quote</a>
+      </li>
+    </ul>
+  </nav>
+</header>
