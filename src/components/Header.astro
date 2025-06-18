@@ -1,55 +1,63 @@
 ---
 import HeaderLink from './HeaderLink.astro';
-let isOpen = false;
-const toggleMenu = () => {
-  isOpen = !isOpen;
-};
 ---
 
-<header class="bg-white shadow-md sticky top-0 z-50">
-  <div class="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
-    <a href="/" class="text-2xl font-bold tracking-wide text-blue-700">Handyman Cruz</a>
+<!--
+  Header.astro — JS‑free, mobile‑first, smooth as MJ.
+  Uses <details>/<summary> for built‑in toggle = no client hydration needed.
+-->
+<header class="bg-white/95 backdrop-blur shadow-md sticky top-0 z-50">
+  <div class="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
+
+    <!-- Logo -->
+    <a href="/" class="text-2xl font-extrabold tracking-wide text-blue-700">
+      Handyman Cruz
+    </a>
 
     <!-- Desktop Nav -->
-    <nav class="hidden md:flex gap-8 text-gray-700 font-medium">
+    <nav class="hidden lg:flex gap-8 text-gray-700 font-medium">
       <HeaderLink href="/">Home</HeaderLink>
       <HeaderLink href="/services">Services</HeaderLink>
       <HeaderLink href="/projects">Projects</HeaderLink>
       <HeaderLink href="/about">About</HeaderLink>
       <HeaderLink href="/contact">Contact</HeaderLink>
       <HeaderLink href="#testimonials">Testimonials</HeaderLink>
-      <a href="#quote" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition">Quote</a>
+      <a href="#quote"
+         class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition">
+        Quote
+      </a>
     </nav>
 
-    <!-- Mobile Menu Button -->
-    <button
-      onClick={toggleMenu}
-      class="md:hidden text-gray-800 focus:outline-none"
-      aria-label="Toggle navigation"
-    >
-      <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="2"
-          d={isOpen ? 'M6 18L18 6M6 6l12 12' : 'M4 6h16M4 12h16M4 18h16'}
-        />
-      </svg>
-    </button>
-  </div>
+    <!-- Mobile Burger (native toggle) -->
+    <details class="lg:hidden relative">
+      <summary aria-label="Toggle navigation"
+               class="cursor-pointer list-none text-gray-800 focus:outline-none">
+        <!-- Hamburger / X icon (pure CSS) -->
+        <div class="w-7 h-7 flex flex-col justify-between">
+          <span class="block h-0.5 bg-current transition-transform origin-center
+                       [details-open_:rotate-45]"></span>
+          <span class="block h-0.5 bg-current transition-all
+                       [details-open_:opacity-0]"></span>
+          <span class="block h-0.5 bg-current transition-transform origin-center
+                       [details-open_:-rotate-45]"></span>
+        </div>
+      </summary>
 
-  <!-- Mobile Dropdown Menu -->
-  <nav class={`md:hidden bg-white transition-all duration-300 overflow-hidden ${isOpen ? 'max-h-screen p-4' : 'max-h-0 p-0'}`}>
-    <ul class="flex flex-col gap-4 text-gray-800 font-medium">
-      <li><HeaderLink href="/">Home</HeaderLink></li>
-      <li><HeaderLink href="/services">Services</HeaderLink></li>
-      <li><HeaderLink href="/projects">Projects</HeaderLink></li>
-      <li><HeaderLink href="/about">About</HeaderLink></li>
-      <li><HeaderLink href="/contact">Contact</HeaderLink></li>
-      <li><HeaderLink href="#testimonials">Testimonials</HeaderLink></li>
-      <li>
-        <a href="#quote" class="block bg-blue-600 text-white px-4 py-2 rounded-lg text-center hover:bg-blue-700 transition">Request a Quote</a>
-      </li>
-    </ul>
-  </nav>
+      <nav
+        class="absolute right-0 mt-3 w-56 bg-white rounded-lg shadow-lg p-4 space-y-3
+               text-gray-700 font-medium">
+        <HeaderLink href="/">Home</HeaderLink>
+        <HeaderLink href="/services">Services</HeaderLink>
+        <HeaderLink href="/projects">Projects</HeaderLink>
+        <HeaderLink href="/about">About</HeaderLink>
+        <HeaderLink href="/contact">Contact</HeaderLink>
+        <HeaderLink href="#testimonials">Testimonials</HeaderLink>
+        <a href="#quote"
+           class="block bg-blue-600 text-white text-center px-4 py-2 rounded-lg hover:bg-blue-700 transition">
+          Request a Quote
+        </a>
+      </nav>
+    </details>
+
+  </div>
 </header>

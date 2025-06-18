@@ -1,22 +1,41 @@
 ---
 import BaseHead from '@/components/BaseHead.astro';
-import Header from '@/components/Header.astro';
-import Footer from '@/components/Footer.astro';
-import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+import Header   from '@/components/Header.astro';
+import Footer   from '@/components/Footer.astro';
+import { SITE_TITLE } from '../consts';
 ---
+
+<!doctype html>
 <html lang="en">
   <head>
-    <BaseHead title={`Projects – ${SITE_TITLE}`} description="Gallery of completed projects by Handyman Cruz." />
+    <BaseHead
+      title={`Projects – ${SITE_TITLE}`}
+      description="Browse recent handyman projects completed by Handyman Cruz."
+    />
+    <style global>
+      .gallery img {
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0,0,0,.15);
+        transition: transform .25s;
+      }
+      .gallery img:hover { transform: scale(1.04); }
+    </style>
   </head>
-  <body class="bg-gray-100">
+  <body class="bg-gray-100 text-gray-800">
     <Header />
+
     <main class="max-w-5xl mx-auto px-6 py-12">
-      <h1 class="text-3xl font-semibold mb-8">Projects</h1>
-      <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-        <img src="/images/project1.webp" alt="Deck repair before/after" loading="lazy" class="rounded-lg shadow-md" />
-        <!-- Add more project images similarly -->
+      <h1 class="text-3xl font-semibold mb-8">Recent Projects</h1>
+
+      <!-- 3‑column responsive grid -->
+      <div class="gallery grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <img src="/images/project1.webp" alt="Deck repair – after" loading="lazy" />
+        <img src="/images/project2.webp" alt="Fence installation"  loading="lazy" />
+        <img src="/images/project3.webp" alt="Paving job"          loading="lazy" />
+        <!-- add more as needed -->
       </div>
     </main>
+
     <Footer />
   </body>
 </html>
