@@ -43,19 +43,19 @@ Built with:
 
 ## 🧱 Setup Instructions
 
-1. 📦 Install Dependencies
-npm install
+📦 Install Dependencies  
+   npm install
 
-2. 🧪 Local Development
-npm run dev
+🧪 Local Development  
+   npm run dev
 
-Visit: http://localhost:4321
+   Visit: <http://localhost:4321>
 
-3. 🚀 Deploy to Cloudflare
-Make sure Wrangler is installed:
-npm install -g wrangler
-Then:
-wrangler deploy
+🚀 Deploy to Cloudflare  
+   Make sure Wrangler is installed:  
+   npm install -g wrangler  
+   Then:  
+   wrangler deploy
 
 🎨 Tailwind Config
 Tailwind v4 with:
@@ -76,7 +76,7 @@ Run npm run dev and ensure all pages and components render without error.
 
 ✅ Check Cloudflare deployment:
 Run: wrangler pages project list to confirm it's connected.
-Visit: https://handymancruz.com
+Visit: <https://handymancruz.com>
 Confirm latest changes (refresh cache with Ctrl+Shift+R or ⌘+Shift+R)
 
 ✅ Check build output:
@@ -103,11 +103,13 @@ Contact: facebook.com/handymancruz
 To confirm everything is fresh and deployed:
 
 🖥️ Locally:
+
 - Run `npm run dev`
 - Visit `http://localhost:4321`
 - Confirm no broken components, images, or pages.
 
 🚀 Online:
+
 - Go to `https://handymancruz.com`
 - Press **Ctrl + Shift + R** (hard refresh)
 - Confirm new text/images/styles show up
@@ -115,6 +117,6 @@ To confirm everything is fresh and deployed:
 - (Optional) Use a phone browser or another device to triple-check
 
 🧼 Optional cleanup:
+
 - Clear Cloudflare cache in the dashboard if old assets still appear.
 - Double-check your `tailwind.css` file path and make sure **only one global stylesheet is being loaded** in `Layout.astro`.
-
