@@ -2,24 +2,25 @@
 import Layout from '../layouts/Layout.astro';
 import BaseHead from '../components/BaseHead.astro';
 import ParallaxHero from '../components/ParallaxHero.astro';
-import { projectData } from '../data/projects.js'; // optional
+import { projectData } from '../data/projects.js';
+import QuoteForm from '../components/QuoteForm.astro';
 ---
 
 <Layout title="Projects – Handyman Cruz">
-  <BaseHead title="Projects – Handyman Cruz" description="Take a look at completed hands-on projects." />
-  <ParallaxHero title="Recent Projects" subtitle="Crafted work across Perth" />
+  <BaseHead title="Projects – Handyman Cruz" description="A showcase of recent work." />
+  <ParallaxHero title="Projects" subtitle="Built to last. Crafted with care." />
 
-  <section class="max-w-5xl mx-auto px-6 py-12">
-    <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-      {projectData.map(proj => (
-        <div class="bg-neutral-800 rounded-lg overflow-hidden shadow-md fade-in">
-          <img src={proj.image} alt={proj.title} class="w-full h-48 object-cover" loading="lazy" />
-          <div class="p-4">
-            <h3 class="text-xl font-semibold text-yellow-300">{proj.title}</h3>
-            <p class="text-neutral-200 mt-2">{proj.content}</p>
-          </div>
+  <section class="max-w-6xl mx-auto px-6 py-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+    {projectData.map(proj => (
+      <div class="bg-neutral-800 rounded-lg shadow-md overflow-hidden fade-in">
+        <img src={proj.image} alt={proj.title} data-lightbox class="cursor-zoom-in w-full h-48 object-cover" loading="lazy" />
+        <div class="p-4">
+          <h3 class="text-xl font-semibold text-yellow-300">{proj.title}</h3>
+          <p class="text-neutral-200 mt-2">{proj.content}</p>
         </div>
-      ))}
-    </div>
+      </div>
+    ))}
   </section>
+
+  <QuoteForm />
 </Layout>
