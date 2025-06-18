@@ -1,41 +1,37 @@
 ---
 import BaseHead from '@/components/BaseHead.astro';
-import Header   from '@/components/Header.astro';
-import Footer   from '@/components/Footer.astro';
+import Header from '@/components/Header.astro';
+import Footer from '@/components/Footer.astro';
 import { SITE_TITLE } from '../consts';
+import { projectData } from '@/data/projects.js';
 ---
 
-<!doctype html>
-<html lang="en">
-  <head>
-    <BaseHead
-      title={`Projects – ${SITE_TITLE}`}
-      description="Browse recent handyman projects completed by Handyman Cruz."
-    />
-    <style global>
-      .gallery img {
-        border-radius: 10px;
-        box-shadow: 0 4px 10px rgba(0,0,0,.15);
-        transition: transform .25s;
-      }
-      .gallery img:hover { transform: scale(1.04); }
-    </style>
-  </head>
-  <body class="bg-gray-100 text-gray-800">
-    <Header />
+<BaseHead
+  title={`Projects – ${SITE_TITLE}`}
+  description="Browse recent handyman projects completed by Handyman Cruz."
+/>
 
-    <main class="max-w-5xl mx-auto px-6 py-12">
-      <h1 class="text-3xl font-semibold mb-8">Recent Projects</h1>
+<body class="bg-gray-100 text-gray-800">
+  <Header />
 
-      <!-- 3‑column responsive grid -->
-      <div class="gallery grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-        <img src="/images/project1.webp" alt="Deck repair – after" loading="lazy" />
-        <img src="/images/project2.webp" alt="Fence installation"  loading="lazy" />
-        <img src="/images/project3.webp" alt="Paving job"          loading="lazy" />
-        <!-- add more as needed -->
-      </div>
-    </main>
+  <main class="max-w-5xl mx-auto px-6 py-12">
+    <h1 class="text-3xl font-semibold mb-8">Recent Projects</h1>
 
-    <Footer />
-  </body>
-</html>
+    <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      {projectData.map(project => (
+        <div class="bg-white rounded-lg shadow p-4">
+          <img
+            src={project.image}
+            alt={project.title}
+            class="rounded mb-4 w-full h-auto object-cover"
+            loading="lazy"
+          />
+          <h3 class="text-xl font-semibold text-gray-800 mb-2">{project.title}</h3>
+          <p class="text-gray-700 text-sm">{project.content}</p>
+        </div>
+      ))}
+    </div>
+  </main>
+
+  <Footer />
+</body>

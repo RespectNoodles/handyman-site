@@ -143,6 +143,36 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 
       <!-- Testimonials -->
       <section class="testimonials" id="testimonials">
+      <section class="my-16 px-4 md:px-0">
+  <h2 class="text-3xl font-bold text-center text-gray-900 mb-10">My Recent Work</h2>
+  <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3 max-w-6xl mx-auto">
+    <!-- Project Card -->
+    <div class="bg-white rounded-lg shadow-md overflow-hidden transition-transform hover:scale-[1.02]">
+      <img src="/images/sample-project1.jpg" alt="Deck Build" class="w-full h-48 object-cover" />
+      <div class="p-4">
+        <h3 class="text-xl font-semibold text-gray-800">Timber Deck Build</h3>
+        <p class="text-gray-600 mt-2">Built a modern timber deck with strong foundations and smooth finish.</p>
+      </div>
+    </div>
+
+    <div class="bg-white rounded-lg shadow-md overflow-hidden transition-transform hover:scale-[1.02]">
+      <img src="/images/sample-project2.jpg" alt="Fence Repair" class="w-full h-48 object-cover" />
+      <div class="p-4">
+        <h3 class="text-xl font-semibold text-gray-800">Fence Repair</h3>
+        <p class="text-gray-600 mt-2">Repaired and reinforced a damaged boundary fence after storm damage.</p>
+      </div>
+    </div>
+
+    <div class="bg-white rounded-lg shadow-md overflow-hidden transition-transform hover:scale-[1.02]">
+      <img src="/images/sample-project3.jpg" alt="Tiling Job" class="w-full h-48 object-cover" />
+      <div class="p-4">
+        <h3 class="text-xl font-semibold text-gray-800">Outdoor Tiling</h3>
+        <p class="text-gray-600 mt-2">Completed outdoor tiling for patio using anti-slip stone tiles.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
         <h2>What People Say</h2>
 
         <blockquote>"Cruz fixed our fence in no time and even cleaned up after. Super reliable!"
@@ -156,16 +186,17 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
         </blockquote>
       </section>
 
-      <!-- Quote Form -->
-      <section class="quote-form" id="quote">
-        <h2>Request a Quote</h2>
-        <form action="#" method="POST">
-          <input type="text"     name="name"    placeholder="Your Name"    required />
-          <input type="email"    name="email"   placeholder="Your Email"   required />
-          <textarea name="message" placeholder="Tell me about the job…" rows="4" required></textarea>
-          <button type="submit" class="btn-primary">Send Request</button>
-        </form>
-      </section>
+<!-- Quote Form -->
+<section id="quote" class="bg-white rounded-lg shadow-lg p-6 my-10">
+<h2 class="text-2xl font-bold text-center text-blue-700 mb-4">Request a Free Quote</h2>
+<form action="#" method="POST" class="grid grid-cols-1 gap-4 max-w-xl mx-auto">
+  <input type="text" name="name" placeholder="Your Name" class="p-3 rounded border border-gray-300" required />
+  <input type="email" name="email" placeholder="Your Email" class="p-3 rounded border border-gray-300" required />
+  <textarea name="message" placeholder="Describe the job..." rows="4" class="p-3 rounded border border-gray-300" required></textarea>
+  <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Send Request</button>
+  </form>
+</section>
+
 
       <!-- Contact Info -->
       <section class="contact-info" id="contact">
