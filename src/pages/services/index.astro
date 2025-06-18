@@ -1,21 +1,33 @@
 ---
+import BaseHead from '@/components/BaseHead.astro';
 import Header from '@/components/Header.astro';
 import Footer from '@/components/Footer.astro';
-import BaseHead from '@/components/BaseHead.astro';
+import { SITE_TITLE, SITE_DESCRIPTION } from '../../consts';
 ---
-
+<!doctype html>
 <html lang="en">
   <head>
-    <BaseHead title="Home | Handyman Cruz" description="Affordable and reliable handyman services in Perth." />
+    <BaseHead title={`Services – ${SITE_TITLE}`} description="Explore handyman services offered in Perth." />
   </head>
-  <body>
+  <body class="bg-gray-100 text-gray-800">
     <Header />
 
-    <main style="max-width: 900px; margin: 2rem auto; padding: 1rem;">
-      <h1 style="color: #007acc;">Services I Offer</h1>
+    <main class="max-w-5xl mx-auto px-6 py-12">
+      <h1 class="text-3xl font-semibold mb-8">Services</h1>
 
-      <!-- Your sections here... -->
-
+      <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <!-- Example card -->
+        <div class="bg-white rounded-lg p-6 shadow-lg hover:shadow-xl transition-shadow duration-200">
+          <svg class="h-10 w-10 text-blue-600 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <!-- Heroicon: wrench -->
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M..." />
+          </svg>
+          <h2 class="text-xl font-medium mb-2">General Repairs</h2>
+          <p>Quick fixes around the home including plumbing, fittings, and hardware repairs.</p>
+        </div>
+        <!-- Repeat cards for other services -->
+      </div>
     </main>
 
     <Footer />

@@ -1,45 +1,22 @@
-
 ---
-import Header from '@/components/Header.astro'; 
+import BaseHead from '@/components/BaseHead.astro';
+import Header from '@/components/Header.astro';
 import Footer from '@/components/Footer.astro';
+import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 ---
-
 <html lang="en">
   <head>
-    <title>Projects | Handyman Cruz</title>
+    <BaseHead title={`Projects – ${SITE_TITLE}`} description="Gallery of completed projects by Handyman Cruz." />
   </head>
-  <body>
+  <body class="bg-gray-100">
     <Header />
-
-    <main style="max-width: 900px; margin: 2rem auto; padding: 1rem;">
-      <h1 style="color: #007acc;">Services I Offer</h1>
-
-      <section style="background: #fff; padding: 1.5rem; border-radius: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.1); margin-bottom: 2rem;">
-        <h2>General Repairs</h2>
-        <p>Door fixes, drywall patching, fence repairs — quick, tidy, and done right.</p>
-      </section>
-
-      <section style="background: #fff; padding: 1.5rem; border-radius: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.1); margin-bottom: 2rem;">
-        <h2>Tiling & Grouting</h2>
-        <p>Bathroom, kitchen, laundry. Precision tile laying, regrouting, and waterproofing.</p>
-      </section>
-
-      <section style="background: #fff; padding: 1.5rem; border-radius: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.1); margin-bottom: 2rem;">
-        <h2>Concreting & Paving</h2>
-        <p>Driveway patch-ups, garden paving, or slab foundations. Functional and durable.</p>
-      </section>
-
-      <section style="background: #fff; padding: 1.5rem; border-radius: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.1); margin-bottom: 2rem;">
-        <h2>Flatpack Assembly</h2>
-        <p>Desks, shelves, beds, and furniture built without the Allen key rage.</p>
-      </section>
-
-      <section style="background: #fff; padding: 1.5rem; border-radius: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.1);">
-        <h2>Custom Requests</h2>
-        <p>If it’s hands-on and you need a reliable bloke to sort it — I’ll make it happen. Just ask.</p>
-      </section>
+    <main class="max-w-5xl mx-auto px-6 py-12">
+      <h1 class="text-3xl font-semibold mb-8">Projects</h1>
+      <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <img src="/images/project1.webp" alt="Deck repair before/after" loading="lazy" class="rounded-lg shadow-md" />
+        <!-- Add more project images similarly -->
+      </div>
     </main>
-
     <Footer />
   </body>
 </html>
