@@ -44,7 +44,10 @@ body {
   padding: 0;
   text-align: left;
   background: linear-gradient(var(--gray-gradient)) no-repeat;
-  background-size: 100% 600px;
+  background-image: url('/images/texture-wood.jpg'); /* Place in /public/images/ */
+  background-size: cover;
+  background-attachment: fixed;
+  background-blend-mode: multiply;
   word-wrap: break-word;
   overflow-wrap: break-word;
   color: rgb(var(--gray-dark));
