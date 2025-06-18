@@ -10,19 +10,91 @@ layout: Layout;
 <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
 
 <!-- ⭐ Hero / Top Banner -->
-<section class="relative h-[500px] bg-cover bg-center bg-no-repeat" style="background-image: url('/assets/Business-card-front.png');">
+<section class="relative h-[500px] bg-cover bg-center bg-no-repeat" 
+style="background-image: url('/images/texture-wood.jpg');">
   <div class="absolute inset-0 bg-black bg-opacity-70 flex items-center justify-center">
     <div class="text-center px-6">
       <h1 class="text-4xl md:text-5xl font-bold text-white drop-shadow-lg">Welcome to Handyman Cruz</h1>
-      <p class="text-gray-300 mt-4 text-xl max-w-xl mx-auto">Where rustic craftsmanship meets modern service.</p>
-      <a href="#quote" class="mt-6 inline-block bg-rust text-white px-6 py-3 rounded shadow-md hover:bg-orange-800 transition">Request a Free Quote</a>
+      <p class="text-gray-300 mt-4 text-xl max-w-xl mx-auto">Where creativity & determination meets modern service.</p>
+      <a class="bg-rust text-white font-semibold px-5 py-2 rounded hover:bg-orange-900 transition" href="#quote">Request a Free Quote</a>
+ <br>
+  <a href="#" class="text-rust hover:underline">Read More</a>
+  </div>
+    </div>
+</section>
+
+
+<main>
+  <!-- Business Cards -->
+  <section class="relative h-[500px] bg-cover bg-repeat" 
+  style="background-image: url('/images/texture-wood.jpg');">
+  <div class="absolute inset-500 bg-opacity-20 flex items-center justify-center">
+    <div class="text-center px-6">
+  <h2 class="text-4xl md:text-5xl font-bold text-white">Quick Details:</h2>
+  <img src="/assets/Business-card-front.png" alt="Business Card Front" loading="lazy" />
+  <img src="/assets/Business-card-back.png"  alt="Business Card Back"  loading="lazy" />
+  </section>
+
+  <!-- Testimonials + Project Cards -->
+    <section class="testimonials" id="testimonials">
+      <h2>What People Say</h2>
+      <blockquote>"Cruz fixed our fence in no time and even cleaned up after. Super reliable!"
+        <cite>— Jake M., Glenroy</cite>
+      </blockquote>
+    <blockquote>"Professional, fast, and friendly. I’d definitely call him again."
+      <cite>— Sal L., Craigieburn</cite>
+    </blockquote>
+      <blockquote>"Fair price and quality work. Highly recommended."
+        <cite>— Teresa F., Roxburgh Park</cite>
+      </blockquote>
+    </section>
+
+  <section class="bg-neutral-800 text-neutral-100 rounded-lg shadow-md ...">
+  <h2 class="text-3xl font-bold text-center text-gray-900 mb-10">My Recent Work</h2>
+  <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3 max-w-6xl mx-auto">
+    <div class="bg-white rounded-lg shadow-md overflow-hidden transition-transform hover:scale-[1.02]">
+      <img src="/images/sample-project1.jpg" alt="Deck Build" class="w-full h-48 object-cover" />
+      <div class="p-4">
+        <h3 class="text-xl font-semibold text-gray-800">Timber Deck Build</h3>
+        <p class="text-gray-600 mt-2">Built a modern timber deck with strong foundations and smooth finish.</p>
+      </div>
+    </div>
+    <div class="bg-white rounded-lg shadow-md overflow-hidden transition-transform hover:scale-[1.02]">
+      <img src="/images/sample-project2.jpg" alt="Fence Repair" class="w-full h-48 object-cover" />
+      <div class="p-4">
+        <h3 class="text-xl font-semibold text-gray-800">Fence Repair</h3>
+        <p class="text-gray-600 mt-2">Repaired and reinforced a damaged boundary fence after storm damage.</p>
+      </div>
+    </div>
+    <div class="bg-white rounded-lg shadow-md overflow-hidden transition-transform hover:scale-[1.02]">
+      <img src="/images/sample-project3.jpg" alt="Tiling Job" class="w-full h-48 object-cover" />
+      <div class="p-4">
+        <h3 class="text-xl font-semibold text-gray-800">Outdoor Tiling</h3>
+        <p class="text-gray-600 mt-2">Completed outdoor tiling for patio using anti-slip stone tiles.</p>
+      </div>
     </div>
   </div>
 </section>
 
-<main>
+<!-- Quote Form -->
+<section id="quote" class="bg-white rounded-lg shadow-lg p-6 my-10">
+  <h2 class="text-2xl font-bold text-center text-blue-700 mb-4">Request a Free Quote</h2>
+  <form action="#" method="POST" class="grid grid-cols-1 gap-4 max-w-xl mx-auto">
+    <input type="text" name="name" placeholder="Your Name" class="p-3 rounded border border-gray-300" required />
+    <input type="email" name="email" placeholder="Your Email" class="p-3 rounded border border-gray-300" required />
+    <textarea name="message" placeholder="Describe the job..." rows="4" class="p-3 rounded border border-gray-300" required></textarea>
+    <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Send Request</button>
+  </form>
+</section>
+<!-- Contact Info -->
+<section class="contact-info" id="contact">
+  <h2>Contact Me</h2>
+  <p>📞 <a href="tel:+61427706676">+61 427 706 676</a></p>
+  <p>📧 <a href="mailto:handymancruz3@gmail.com">handymancruz3@gmail.com</a></p>
+</section>
+
   <!-- Why Choose Me -->
-  <section class="experience">
+  <section class="px-6 md:px-10 py-12 space-y-16">
     <h2>Why Choose Me?</h2>
     <img
       src="/images/tools.jpg"
@@ -38,74 +110,6 @@ layout: Layout;
       • Transparent pricing — no hidden costs<br />
       • Friendly, punctual, and trustworthy service
     </p>
-  </section>
-
-  <!-- Business Cards -->
-  <section class="card-images">
-    <h2>Business Card</h2>
-    <img src="/assets/Business-card-front.png" alt="Business Card Front" loading="lazy" />
-    <img src="/assets/Business-card-back.png"  alt="Business Card Back"  loading="lazy" />
-  </section>
-
-  <!-- Testimonials + Project Cards -->
-  <section class="testimonials" id="testimonials">
-    <h2>What People Say</h2>
-    <blockquote>"Cruz fixed our fence in no time and even cleaned up after. Super reliable!"
-      <cite>— Jake M., Glenroy</cite>
-    </blockquote>
-    <blockquote>"Professional, fast, and friendly. I’d definitely call him again."
-      <cite>— Sal L., Craigieburn</cite>
-    </blockquote>
-    <blockquote>"Fair price and quality work. Highly recommended."
-      <cite>— Teresa F., Roxburgh Park</cite>
-    </blockquote>
-  </section>
-
-  <section class="my-16 px-4 md:px-0">
-    <h2 class="text-3xl font-bold text-center text-gray-900 mb-10">My Recent Work</h2>
-    <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3 max-w-6xl mx-auto">
-      <div class="bg-white rounded-lg shadow-md overflow-hidden transition-transform hover:scale-[1.02]">
-        <img src="/images/sample-project1.jpg" alt="Deck Build" class="w-full h-48 object-cover" />
-        <div class="p-4">
-          <h3 class="text-xl font-semibold text-gray-800">Timber Deck Build</h3>
-          <p class="text-gray-600 mt-2">Built a modern timber deck with strong foundations and smooth finish.</p>
-        </div>
-      </div>
-
-      <div class="bg-white rounded-lg shadow-md overflow-hidden transition-transform hover:scale-[1.02]">
-        <img src="/images/sample-project2.jpg" alt="Fence Repair" class="w-full h-48 object-cover" />
-        <div class="p-4">
-          <h3 class="text-xl font-semibold text-gray-800">Fence Repair</h3>
-          <p class="text-gray-600 mt-2">Repaired and reinforced a damaged boundary fence after storm damage.</p>
-        </div>
-      </div>
-
-      <div class="bg-white rounded-lg shadow-md overflow-hidden transition-transform hover:scale-[1.02]">
-        <img src="/images/sample-project3.jpg" alt="Tiling Job" class="w-full h-48 object-cover" />
-        <div class="p-4">
-          <h3 class="text-xl font-semibold text-gray-800">Outdoor Tiling</h3>
-          <p class="text-gray-600 mt-2">Completed outdoor tiling for patio using anti-slip stone tiles.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Quote Form -->
-  <section id="quote" class="bg-white rounded-lg shadow-lg p-6 my-10">
-    <h2 class="text-2xl font-bold text-center text-blue-700 mb-4">Request a Free Quote</h2>
-    <form action="#" method="POST" class="grid grid-cols-1 gap-4 max-w-xl mx-auto">
-      <input type="text" name="name" placeholder="Your Name" class="p-3 rounded border border-gray-300" required />
-      <input type="email" name="email" placeholder="Your Email" class="p-3 rounded border border-gray-300" required />
-      <textarea name="message" placeholder="Describe the job..." rows="4" class="p-3 rounded border border-gray-300" required></textarea>
-      <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Send Request</button>
-    </form>
-  </section>
-
-  <!-- Contact Info -->
-  <section class="contact-info" id="contact">
-    <h2>Contact Me</h2>
-    <p>📞 <a href="tel:+61427706676">+61 427 706 676</a></p>
-    <p>📧 <a href="mailto:handymancruz3@gmail.com">handymancruz3@gmail.com</a></p>
   </section>
 
   <!-- Social -->

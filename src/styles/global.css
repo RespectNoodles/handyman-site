@@ -142,7 +142,12 @@ hr {
 }
 @media (max-width: 720px) {
   body {
+  background-image: url('/images/texture-wood.jpg'); /* Place in /public/images/ */
+  background-size: cover;
+  background-attachment: fixed;
+  background-blend-mode: multiply;
     font-size: 18px;
+    font-family: 'Rubik', sans-serif;
   }
   main {
     padding: 1em;
