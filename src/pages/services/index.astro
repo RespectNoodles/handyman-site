@@ -13,41 +13,39 @@ import { SITE_TITLE } from '../../consts';
       description="Discover the professional handyman services offered by Handyman Cruz."
     />
   </head>
-  <body class="bg-gray-100 text-gray-800">
-    <Header />
 
-    <main class="max-w-5xl mx-auto px-6 py-12">
-      <h1 class="text-3xl font-semibold mb-8">Services</h1>
+<body class="bg-gradient-to-br from-gray-900 via-gray-800 to-gray-700 text-gray-100 min-h-screen">
+  <Header />
 
-      <ul class="list-disc list-inside space-y-4">
-        <li>
-          <a href="/services/concreting-paving.astro" class="text-blue-600 hover:underline">
-            Concreting & Paving
-          </a>
-          <p class="mt-1 text-gray-700">
-            Quality concreting and paving solutions including driveways, paths, and patios.
-          </p>
-        </li>
-        <li>
-          <a href="/services/general-repairs.astro" class="text-blue-600 hover:underline">
-            General Repairs
-          </a>
-          <p class="mt-1 text-gray-700">
-            Reliable repair work for your home including doors, windows, and fixtures.
-          </p>
-        </li>
-        <li>
-          <a href="/services/tiling-grouting.astro" class="text-blue-600 hover:underline">
-            Tiling & Grouting
-          </a>
-          <p class="mt-1 text-gray-700">
-            Expert tiling and regrouting services for bathrooms, kitchens, and floors.
-          </p>
-        </li>
-        <!-- Add more services if needed -->
-      </ul>
-    </main>
+  <main class="max-w-5xl mx-auto px-6 py-12">
+    <h1 class="text-4xl font-extrabold mb-8">Services</h1>
 
-    <Footer />
-  </body>
+    <ul class="space-y-8">
+      <li class="flex items-center gap-6">
+        <img src="/images/concreting-paving.jpg" alt="Concreting & Paving" class="w-32 rounded shadow-lg" />
+        <div>
+          <h2 class="text-2xl font-semibold">Concreting & Paving</h2>
+          <p>Quality concreting and paving solutions including driveways, paths, and patios.</p>
+        </div>
+      </li>
+      <li class="flex items-center gap-6">
+        <img src="/images/general-repairs.jpg" alt="General Repairs" class="w-32 rounded shadow-lg" />
+        <div>
+          <h2 class="text-2xl font-semibold">General Repairs</h2>
+          <p>Reliable repair work for your home including doors, windows, and fixtures.</p>
+        </div>
+      </li>
+      <li class="flex items-center gap-6">
+        <img src="/images/tiling-grouting.jpg" alt="Tiling & Grouting" class="w-32 rounded shadow-lg" />
+        <div>
+          <h2 class="text-2xl font-semibold">Tiling & Grouting</h2>
+          <p>Expert tiling and regrouting services for bathrooms, kitchens, and floors.</p>
+        </div>
+      </li>
+    </ul>
+  </main>
+
+  <Footer />
+</body>
+
 </html>

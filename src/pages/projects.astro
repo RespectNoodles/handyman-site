@@ -11,18 +11,29 @@ import { projectData } from '@/data/projects.js';
   description="Browse recent handyman projects completed by Handyman Cruz."
 />
 
-<body class="bg-gray-100 text-gray-800">
+<body class="bg-gradient-to-br from-gray-900 via-gray-800 to-gray-700 text-gray-100 min-h-screen">
   <Header />
 
   <main class="max-w-5xl mx-auto px-6 py-12">
-    <h1 class="text-3xl font-semibold mb-8">Recent Projects</h1>
+    <h1 class="text-4xl font-extrabold mb-8">Recent Projects</h1>
 
-<div class="gallery grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-  <img src="/images/sample-project1.jpg" alt="Art piece hanging" class="w-full h-64 object-cover rounded-lg shadow-md" loading="lazy" />
-  <img src="/images/sample-project2.jpg" alt="Custom window blinds" class="w-full h-64 object-cover rounded-lg shadow-md" loading="lazy" />
-  <img src="/images/sample-project3.jpg" alt="Recycled wood fence" class="w-full h-64 object-cover rounded-lg shadow-md" loading="lazy" />
-</div>
-
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div>
+        <img src="/images/sample-project1.jpg" alt="Art-piece hung on wall" class="rounded shadow-lg w-full object-cover max-h-64" />
+        <h2 class="mt-2 text-xl font-semibold">Art Piece Hanging</h2>
+        <p>A beautiful art-piece hung carefully on the wall.</p>
+      </div>
+      <div>
+        <img src="/images/sample-project2.jpg" alt="Custom varnished window blinds" class="rounded shadow-lg w-full object-cover max-h-64" />
+        <h2 class="mt-2 text-xl font-semibold">Window Blinds Installation</h2>
+        <p>Installed and custom varnished window blinds with a stunning aesthetic.</p>
+      </div>
+      <div>
+        <img src="/images/sample-project3.jpg" alt="Fence built with recycled wood" class="rounded shadow-lg w-full object-cover max-h-64" />
+        <h2 class="mt-2 text-xl font-semibold">Hand-built Recycled Wood Fence</h2>
+        <p>A creative fence built using recycled wood and hand tools.</p>
+      </div>
+    </div>
   </main>
 
   <Footer />
