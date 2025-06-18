@@ -2,6 +2,11 @@
 // Accepts "href" and optional "class"
 const { href, class: extraClass } = Astro.props;
 ---
-<a href={href} class={`hover:text-blue-600 transition-colors ${extraClass || ''}`}>
-  <slot />
+<a class="bg-rust text-white font-semibold px-5 py-2 rounded hover:bg-orange-900 transition" href="#quote">
+  Request a Free Quote 
+  </a>
+<a href="#" class="text-rust hover:underline">Read More
 </a>
+
+
+
