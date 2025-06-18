@@ -1,7 +1,7 @@
 ---
 import BaseHead from '@/components/BaseHead.astro';
-import Header from '@/components/Header.astro';
-import Footer from '@/components/Footer.astro';
+import Header   from '@/components/Header.astro';
+import Footer   from '@/components/Footer.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 ---
 
@@ -9,84 +9,106 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 <html lang="en">
   <head>
     <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-    <style>
-      /* Keep existing styles here */
+
+    <!-- Page‑specific styles -->
+    <style global>
+      /* --- Base typographic scale ----------------------- */
+      :root {
+        --brand-blue: #007acc;
+        --brand-blue-dark: #005fa3;
+        --bg-light: #f5f7fa;
+      }
       body {
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        background: #f5f7fa;
+        font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background: var(--bg-light);
         color: #333;
-        margin: 0; padding: 0;
+        margin: 0;
       }
-      main {
-        max-width: 900px;
-        margin: 2rem auto;
-        padding: 0 1rem;
-      }
-      h1 {
-        color: #007acc;
-        font-size: 2.8rem;
-        margin-bottom: 0.5rem;
-        text-align: center;
-      }
-      p.intro {
-        font-size: 1.2rem;
-        text-align: center;
-        max-width: 700px;
-        margin: 0 auto 2rem;
-        line-height: 1.6;
-      }
-      section {
-        background: white;
-        border-radius: 8px;
-        padding: 1.8rem 2rem;
-        margin-bottom: 2rem;
-        box-shadow: 0 3px 7px rgba(0,0,0,0.1);
-      }
-      .card-images img {
-        display: block;
-        max-width: 100%;
-        margin: 1rem auto;
-        border-radius: 12px;
-        box-shadow: 0 2px 10px rgba(0,0,0,0.15);
-      }
-      form {
+      h1,h2 { font-weight: 600; color: var(--brand-blue-dark); }
+      h1 { font-size: 2.75rem; }
+      h2 { font-size: 1.75rem; }
+
+      /* --- Hero section -------------------------------- */
+      .hero {
+        position: relative;
+        min-height: 60vh;
         display: flex;
-        flex-direction: column;
-        gap: 1rem;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        color: #fff;
+        background: url('/images/tools.jpg') center/cover no-repeat;
       }
-      input, textarea {
-        padding: 0.8rem;
-        border-radius: 6px;
-        border: 1px solid #ccc;
-        font-size: 1rem;
+      .hero::after {
+        /* dark overlay for readability */
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: rgba(0,0,0,0.55);
       }
-      button {
-        background: #007acc;
-        color: white;
-        padding: 0.8rem;
+      .hero-inner {
+        position: relative;
+        max-width: 750px;
+        padding: 0 1.5rem;
+        animation: fadeInUp 0.8s ease-out forwards;
+        opacity: 0;          /* start hidden for animation */
+        transform: translateY(20px);
+      }
+      .hero h1 {
+        color: #fff;
+        margin-bottom: 1rem;
+      }
+      .hero p {
+        font-size: 1.2rem;
+        margin-bottom: 2rem;
+        color: #eef;
+      }
+      .btn-primary {
+        background: var(--brand-blue);
+        color: #fff;
+        padding: 0.85rem 1.6rem;
         font-weight: 600;
         border: none;
         border-radius: 6px;
         cursor: pointer;
+        transition: background 0.2s;
       }
-      button:hover {
-        background: #005fa3;
+      .btn-primary:hover { background: var(--brand-blue-dark); }
+
+      /* --- Content sections ---------------------------- */
+      main { max-width: 900px; margin: 3rem auto; padding: 0 1rem; }
+      section {
+        background: #fff;
+        border-radius: 8px;
+        padding: 2rem;
+        margin-bottom: 2.5rem;
+        box-shadow: 0 3px 8px rgba(0,0,0,.08);
+        animation: fadeInUp 0.8s ease-out forwards;
+        opacity: 0; transform: translateY(20px);
       }
-      blockquote {
-        font-style: italic;
-        color: #555;
-        margin: 0.5rem 0 1.5rem;
-        padding-left: 1rem;
-        border-left: 4px solid #007acc;
-      }
-      .testimonial {
-        margin-bottom: 1rem;
-      }
-      .testimonial cite {
+
+      .card-images img,
+      .experience img {
         display: block;
-        font-weight: bold;
-        margin-top: 0.5rem;
-        color: #007acc;
+        max-width: 100%;
+        height: auto;
+        margin: 1rem auto;
+        border-radius: 12px;
+        box-shadow: 0 3px 10px rgba(0,0,0,.15);
+      }
+
+      form { display: flex; flex-direction: column; gap: 1rem; }
+      input, textarea {
+        padding: .85rem;
+        border-radius: 6px;
+        border: 1px solid #ccc;
+        font-size: 1rem;
+      }
+
+      /* --- Animations (CSS‑only, zero JS) -------------- */
+      @keyframes fadeInUp {
+        from { opacity: 0; transform: translateY(20px); }
+        to   { opacity: 1; transform: translateY(0); }
       }
     </style>
   </head>
@@ -94,81 +116,85 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
   <body>
     <Header />
 
-    <main>
-      <h1>Official Site of Handyman Cruz</h1>
-      <p class="intro">
-        Welcome to the home of reliable, affordable handyman services in your local area. I'm Cruz, a skilled and approachable tradesman committed to getting the job done right the first time.
-      </p>
+    <!-- ⭐ Hero / Top Banner -->
+    <section class="hero" id="top">
+      <div class="hero-inner">
+        <h1>Reliable Handyman Services in Perth</h1>
+        <p>
+          Quality repairs, affordable pricing, and friendly service.<br />
+          Let’s get your project off the ground — starting today.
+        </p>
+        <a href="#quote" class="btn-primary">Request a Free Quote</a>
+      </div>
+    </section>
 
+    <!-- ⭐ Main Content -->
+    <main>
+      <!-- Why Choose Me -->
       <section class="experience">
         <h2>Why Choose Me?</h2>
-        
- <img
-  src="/images/tools.jpg"
-  alt="Handyman tools laid out"
-  width="800"
-  height="500"
-  loading="lazy"
-  decoding="async"
-  style="display: block; max-width: 100%; height: auto; border-radius: 12px; margin: 1rem auto; box-shadow: 0 2px 10px rgba(0,0,0,0.1);"
-/>
-
+        <img
+          src="/images/tools.jpg"
+          alt="Handyman tools laid out"
+          width="800"
+          height="500"
+          loading="lazy"
+          decoding="async"
+        />
         <p>
-          • Over 5 years of hands-on trade experience<br />
-          • Fully insured and safety focused<br />
-          • Transparent pricing and no hidden costs<br />
+          • 5 + years hands‑on trade experience<br />
+          • Fully insured &amp; safety‑focused<br />
+          • Transparent pricing — no hidden costs<br />
           • Friendly, punctual, and trustworthy service
         </p>
       </section>
 
+      <!-- Business Cards -->
       <section class="card-images">
         <h2>Business Card</h2>
-        <img src="/assets/Business-card-front.png" alt="Business Card Front" />
-        <img src="/assets/Business-card-back.png" alt="Business Card Back" />
+        <img src="/assets/Business-card-front.png" alt="Business Card Front" loading="lazy" />
+        <img src="/assets/Business-card-back.png"  alt="Business Card Back"  loading="lazy" />
       </section>
 
-      <section class="testimonials">
+      <!-- Testimonials -->
+      <section class="testimonials" id="testimonials">
         <h2>What People Say</h2>
-        <div class="testimonial">
-          <blockquote>"Cruz fixed our fence in no time and even cleaned up after. Super reliable!"</blockquote>
-          <cite>— Jake M., Glenroy</cite>
-        </div>
-        <div class="testimonial">
-          <blockquote>"Professional, fast, and friendly. I’d definitely call him again."</blockquote>
-          <cite>— Sal L., Craigieburn</cite>
-        </div>
-        <div class="testimonial">
-          <blockquote>"Fair price and quality work. Highly recommended."</blockquote>
-          <cite>— Teresa F., Roxburgh Park</cite>
-        </div>
+
+        <blockquote>"Cruz fixed our fence in no time and even cleaned up after. Super reliable!"
+          <cite>— Jake M., Glenroy</cite>
+        </blockquote>
+        <blockquote>"Professional, fast, and friendly. I’d definitely call him again."
+          <cite>— Sal L., Craigieburn</cite>
+        </blockquote>
+        <blockquote>"Fair price and quality work. Highly recommended."
+          <cite>— Teresa F., Roxburgh Park</cite>
+        </blockquote>
       </section>
 
-      <section class="quote-form">
+      <!-- Quote Form -->
+      <section class="quote-form" id="quote">
         <h2>Request a Quote</h2>
         <form action="#" method="POST">
-          <input type="text" name="name" placeholder="Your Name" required />
-          <input type="email" name="email" placeholder="Your Email" required />
-          <textarea name="message" placeholder="Tell me about the job..." rows="4" required></textarea>
-          <button type="submit">Send Request</button>
+          <input type="text"     name="name"    placeholder="Your Name"    required />
+          <input type="email"    name="email"   placeholder="Your Email"   required />
+          <textarea name="message" placeholder="Tell me about the job…" rows="4" required></textarea>
+          <button type="submit" class="btn-primary">Send Request</button>
         </form>
       </section>
 
+      <!-- Contact Info -->
       <section class="contact-info" id="contact">
-        <h2>Contact Me</h2>
-        <p>📞 Phone: <a href="tel:+61427706676">+61 427 706 676</a></p>
-        <p>📧 Email: <a href="mailto:handymancruz3@gmail.com">handymancruz3@gmail.com</a></p>
-        <a href="mailto:handymancruz3@gmail.com" class="btn-contact">Get in Touch</a>
+        <h2>Contact Me</h2>
+        <p>📞 <a href="tel:+61427706676">+61 427 706 676</a></p>
+        <p>📧 <a href="mailto:handymancruz3@gmail.com">handymancruz3@gmail.com</a></p>
       </section>
 
+      <!-- Social -->
       <section class="socials">
-        <h2>Follow Me</h2>
-        <ul class="socials" role="list">
-          <li>
-            <a href="https://www.facebook.com/YOURBUSINESSPAGE" target="_blank" rel="noopener" aria-label="Facebook">
-              🔵 Facebook
-            </a>
-          </li>
-        </ul>
+        <h2>Follow Me</h2>
+        <a href="https://www.facebook.com/YOURBUSINESSPAGE" target="_blank" rel="noopener">
+          🔵 Facebook
+        </a>
       </section>
     </main>
 
