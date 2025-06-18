@@ -4,11 +4,6 @@
  * Re‑usable head element for every page.
  * Pass `title`, `description`, `image`, and `url` props where needed.
  */
- <BaseHead
-  title={`Projects – ${SITE_TITLE}`}
-  description="Browse recent handyman projects completed by Handyman Cruz."
-/>
-
 const {
   title = 'Handyman Cruz – Reliable handyman services in Perth',
   description = 'From repairs to renovations, Handyman Cruz delivers professional handyman services across Perth. Get a free quote today!',
@@ -16,6 +11,7 @@ const {
   url = 'https://handymancruz.com/',
 } = Astro.props;
 ---
+
 <head>
   <meta charset="utf-8" />
 
@@ -39,7 +35,6 @@ const {
   <meta property="og:description" content={description} />
   <meta property="og:url" content={url} />
   <meta property="og:image" content={image} />
-
 
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="/favicon.png" />
