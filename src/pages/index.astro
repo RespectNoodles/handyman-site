@@ -10,15 +10,30 @@ import FAQSection from '../components/FAQSection.astro';
 <Layout>
   <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
 
-  <!-- =====================  HERO SECTION  ===================== -->
-  <section class="relative h-screen bg-fixed bg-center bg-cover" style="background-image: url('/assets/hero.jpg');">
-    <div class="absolute inset-0 bg-black/60"></div>
-    <div class="relative z-10 flex flex-col justify-center items-center text-center text-white h-full px-4">
-      <h1 class="text-5xl md:text-6xl font-bold tracking-tight drop-shadow-lg">Handyman Cruz</h1>
-      <p class="mt-4 text-xl md:text-2xl drop-shadow">Reliable. Skilled. Local.</p>
-      <a href="#about" class="mt-8 inline-block px-6 py-3 border border-white rounded-full hover:bg-white hover:text-black transition">Learn More</a>
+<!-- =====================  HERO SECTION  ===================== -->
+<section class="relative h-screen bg-fixed bg-center bg-cover text-white" style="background-image: url('/assets/hero.jpg');">
+  <div class="absolute inset-0 bg-black/70"></div>
+
+  <div class="relative z-10 flex flex-col justify-center items-center h-full text-center px-4 space-y-6">
+    <h1 class="text-5xl md:text-6xl font-extrabold drop-shadow-xl">Handyman Cruz</h1>
+    <p class="text-xl md:text-2xl max-w-xl mx-auto text-neutral-200">
+      Reliable. Skilled. Local. Your go-to handyman in Perth.
+    </p>
+
+    <div class="flex flex-wrap justify-center gap-4 mt-6">
+      <a href="#quote" class="bg-brand-orange hover:bg-orange-700 text-white font-semibold px-6 py-3 rounded-full transition">
+        Request a Free Quote
+      </a>
+      <a href="/projects" class="bg-white text-black hover:bg-gray-200 font-semibold px-6 py-3 rounded-full transition">
+        View My Work
+      </a>
+      <a href="/services" class="border border-white hover:bg-white hover:text-black px-6 py-3 rounded-full transition">
+        Services I Offer
+      </a>
     </div>
-  </section>
+  </div>
+</section>
+ 
 
   <main class="max-w-7xl mx-auto px-4 md:px-10 py-20 space-y-24">
 

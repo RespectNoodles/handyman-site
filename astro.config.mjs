@@ -2,24 +2,25 @@ import { defineConfig } from "astro/config";
 import mdx from "@astrojs/mdx";
 import sitemap from "@astrojs/sitemap";
 import { fileURLToPath } from "url";
-import tailwindcss from "@tailwindcss/vite";
+import tailwind from "@astrojs/tailwind";
 import sentry from "@sentry/astro";
-import spotlightjs from "@spotlightjs/astro";
+import spotlight from "@spotlightjs/astro";
 
-// https://astro.build/config
 export default defineConfig({
-  site: "https://example.com",
-  integrations: [mdx(), sitemap(), sentry(), spotlightjs()],
-  platformProxy: {
-    enabled: true,
-  },
+  site: "https://handymancruz.com", // ✅ set your live domain
+  integrations: [
+    mdx(),
+    sitemap(),
+    tailwind(), // ✅ use @astrojs/tailwind instead of vite plugin
+    sentry(),
+    spotlight()
+  ],
   vite: {
     resolve: {
       alias: {
-        '@': fileURLToPath(new URL('./src', import.meta.url))
-      }
+        "@": fileURLToPath(new URL("./src", import.meta.url)),
+      },
     },
-
-    plugins: [tailwindcss()]
-  }
+    // No need to manually inject tailwindcss here
+  },
 });
