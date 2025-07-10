@@ -3,7 +3,7 @@ import defaultTheme from 'tailwindcss/defaultTheme';
 
 export default {
   content: [
-    './src/**/*.{astro,html,js,jsx,ts,tsx,vue,svelte}', // adjust for all files using classes
+    './src/**/*.{astro,html,js,jsx,mdx,ts,tsx,vue,svelte}', // adjust for all files using classes
     './public/**/*.html',
   ],
   theme: {
