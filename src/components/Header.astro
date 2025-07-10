@@ -1,48 +1,19 @@
 ---
-/* Responsive header with dropdown. ‑‑ Tailwind only, no React hooks */
-const links = [
-  { href: '/',            label: 'Home'        },
-  { href: '/services',    label: 'Services'    },
-  { href: '/projects',    label: 'Projects'    },
-  { href: '/about',       label: 'About'       },
-  { href: '#contact',     label: 'Contact'     },
-  { href: '#faq',         label: 'FAQ'         },
-  { href: '/testimonials',label: 'Testimonials'},
-];
+// src/components/Header.astro
 ---
+<nav class="fixed top-0 w-full z-50 transition-all bg-transparent text-white py-4 px-6 flex justify-between items-center">
+  <a href="/" class="text-2xl font-bold tracking-tight">Handyman Cruz</a>
+  <ul class="hidden md:flex space-x-6 text-sm font-medium">
+    <li><a href="/about" class="hover:underline">About</a></li>
+    <li><a href="/services" class="hover:underline">Services</a></li>
+    <li><a href="/projects" class="hover:underline">Projects</a></li>
+    <li><a href="/#quote" class="hover:underline">Quote</a></li>
+    <li><a href="/contact" class="hover:underline">Contact</a></li>
+  </ul>
+</nav>
 
-<header class="fixed top-0 left-0 w-full z-50 bg-transparent text-white transition-all duration-300">
-  <!-- logo + nav -->
-</header>
-  <div class="max-w-7xl mx-auto flex items-center justify-between px-4 py-3">
-    <a href="/" class="text-2xl font-bold text-yellow-400 tracking-wide">Handyman Cruz</a>
-
-    <!-- Desktop links -->
-    <nav class="hidden md:flex gap-6">
-      {links.map(l => (
-        <a href={l.href} class="text-brand-yellow hover:text-brand-orange transition">{l.label}</a>
-      ))}
-    </nav>
-
-    <!-- Mobile burger -->
-    <button
-      class="md:hidden p-2 rounded hover:bg-neutral-800"
-      aria-label="Toggle menu"
-      id="burger"
-    >☰</button>
-  </div>
-
-  <!-- Mobile dropdown -->
-  <nav id="mobile-nav" class="hidden md:hidden flex flex-col gap-4 bg-neutral-800 px-6 py-4">
-    {links.map(l => (
-      <a href={l.href} class="hover:text-yellow-300 transition">{l.label}</a>
-    ))}
-  </nav>
-
-  <!-- Tiny JS -->
-  <script>
-    const btn  = document.getElementById('burger');
-    const menu = document.getElementById('mobile-nav');
-    btn.addEventListener('click', () => menu.classList.toggle('hidden'));
-  </script>
-</header>
+<style is:global>
+  html {
+    scroll-behavior: smooth;
+  }
+</style>
