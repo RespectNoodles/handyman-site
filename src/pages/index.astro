@@ -1,6 +1,6 @@
 ---
-<!-- src/pages/index.astro     (Home Page)
-<!--
+// src/pages/index.astro     (Home Page)
+
 import Layout      from '../layouts/Layout.astro';
 import BaseHead    from '../components/BaseHead.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts.js';
@@ -19,7 +19,7 @@ layout: Layout
 
 <!-- =====================  HERO  ===================== -->
 
-<section class="relative h-[100vh] flex flex-col items-center justify-center text-white text-center bg-[url('/assets/your-hero.jpg')] bg-cover bg-center bg-fixed">
+<section class="relative h-[100vh] flex flex-col items-center justify-center text-white text-center bg-[url('/assets/hero.jpg')] bg-cover bg-center bg-fixed">
   <div class="bg-black/60 absolute inset-0 z-0"></div>
   <div class="z-10 max-w-3xl px-4">
     <h1 class="text-5xl md:text-6xl font-bold drop-shadow-md">Handyman Cruz</h1>
@@ -39,8 +39,7 @@ layout: Layout
     class="absolute inset-0"
     style="
       background: linear-gradient(120deg, rgba(0,0,0,0.7), rgba(0,0,0,0.9));
-      animation: bg-move 15s ease-in-out infinite alternate;
-    "
+      animation: bg-move 15s ease-in-out infinite alternate;"
   ></div>
 
   <!-- Hero content -->
