@@ -17,10 +17,14 @@
     "@astrojs/mdx": "^4.3.0",
     "@astrojs/rss": "^4.0.12",
     "@astrojs/sitemap": "^3.4.1",
-    "@sentry/astro": "^9.30.0",
-    "@spotlightjs/astro": "^3.2.4",
+    "@sentry/astro": "^9.36.0",
+    "@spotlightjs/astro": "^3.2.5",
+    "@storyblok/astro": "^7.2.0",
     "@tailwindcss/vite": "^4.1.10",
+    "@ykocaman/astro-medium-loader": "^0.2.4-2",
     "astro": "^5.9.2",
+    "astro-lightgallery": "^1.0.2",
+    "astro-swiper": "^1.0.1",
     "typescript": "5.8.3"
   },
   "devDependencies": {
@@ -30,7 +34,7 @@
     "json-loader": "^0.5.7",
     "postcss": "^8.5.6",
     "tailwindcss": "^4.1.10",
-    "vscode": "^1.1.37",
+    "vscode": "^1.1.34",
     "wrangler": "4.16.1"
   },
   "scripts": {
