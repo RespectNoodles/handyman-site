@@ -1,39 +1,28 @@
 ---
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
-import Styles from '../styles/tailwind.css';
-const { title } = Astro.props;
 ---
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>{title}</title>
+    <meta name="theme-color" content="#1f2937" />
     <link rel="stylesheet" href="/styles/tailwind.css" />
-      <style is:global>
-        .lightbox-backdrop {
-          position: fixed; inset: 0; background: rgba(0,0,0,.8); display: flex;
-          align-items: center; justify-content: center; z-index: 1000; opacity: 0;
-          transition: opacity .3s;
-       }
-        .lightbox-backdrop.show { opacity: 1; }
-        .lightbox-img { max-width: 90vw; max-height: 90vh; border-radius: 8px; }
-      </style>
-
-     <script>
-       /* Minimal lightbox: click any img[data-lightbox] */
-        document.addEventListener('click', e => {
-         const target = e.target.closest('img[data-lightbox]');
-          if (!target) return;
-          const src = target.getAttribute('src');
-         const backdrop = document.createElement('div');
-          backdrop.className = 'lightbox-backdrop';
-         backdrop.innerHTML = `<img src="${src}" class="lightbox-img" />`;
-          backdrop.addEventListener('click', () => backdrop.remove());
-         document.body.appendChild(backdrop);
-         requestAnimationFrame(() => backdrop.classList.add('show'));
-        });
-    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Handyman Cruz</title>
+  </head>
+  <body class="bg-neutral-950 text-white font-sans tracking-tight overflow-x-hidden">
+    <Header />
+    <main class="pt-20">
+      <slot />
+    </main>
+    <Footer />
   </body>
 </html>
