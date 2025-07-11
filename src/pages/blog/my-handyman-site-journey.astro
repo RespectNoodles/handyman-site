@@ -1,10 +1,16 @@
 ---
+// Update the path below to the correct relative path if Layout.astro is in 'src/layouts'
+// Update the path below to the correct relative path if Layout.astro is in 'src/layouts'
 import Layout from '../../layouts/Layout.astro';
 
 export const prerender = true;
-layout: Layout
-title: "From Wrench to Web: Building HandymanCruz.com"
-description: "My personal story of creating a website as a first-time tradie web dev — the struggles, triumphs, and swearing at CSS."
+
+export const frontmatter = {
+  layout: Layout,
+  title: "From Wrench to Web: Building HandymanCruz.com",
+  description: "My personal story of creating a website as a first-time tradie web dev — the struggles, triumphs, and swearing at CSS.",
+  pubDate: new Date('2024-05-28'),
+};
 ---
 
 <article class="prose prose-invert mx-auto px-6 py-20 max-w-3xl">
