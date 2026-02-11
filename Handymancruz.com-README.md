@@ -2,7 +2,7 @@
 
 Professional handyman service website for showcasing repairs, builds, and projects across Perth.<nl>
 
-#Built with:<nl>
+Built with:<nl>
 
 - [Astro](https://astro.build/)<nl>
 - [Tailwind CSS v4](https://tailwindcss.com/docs/installation)<nl>
@@ -14,30 +14,30 @@ Professional handyman service website for showcasing repairs, builds, and projec
 
 ## 📁 Project Structure
 
-├── public/<nl>
-│ └── images/ # Static images (textures, icons, lightbox)<nl>
-├── src/<nl>
-│ ├── components/ # Header, Footer, ParallaxHero, QuoteForm, etc.<nl>
-│ ├── layouts/<nl>
-│ │ └── Layout.astro # Global layout wrapper<nl>
-│ ├── pages/<nl>
-│ │ ├── index.astro # Homepage<nl>
-│ │ ├── about.astro<nl>
-│ │ ├── contact.astro<nl>
-│ │ ├── services/<nl>
-│ │ │ ├── index.astro # Services page<nl>
-│ │ │ └── [slug].astro # Individual service details<nl>
-│ │ ├── projects.astro # Projects gallery<nl>
-│ │ ├── testimonials.astro<nl>
-│ │ └── faq.astro # FAQ toggle page (coming soon)<nl>
-│ ├── styles/<nl>
-│ │ └── tailwind.css # Tailwind v4 & global styles<nl>
-│ └── data/<nl>
-│ ├── services.js # Dynamic service data<nl>
-│ └── projects.js # Dynamic project data<nl>
-├── tailwind.config.js # Tailwind theme + plugins<nl>
-├── astro.config.mjs # Astro + Vite config<nl>
-└── wrangler.toml # Cloudflare deployment config<nl>
+├── public/ <nl>
+│ └── images/ # Static images (textures, icons, lightbox) <nl>
+├── src/ <nl>
+│ ├── components/ # Header, Footer, ParallaxHero, QuoteForm, etc. <nl>
+│ ├── layouts/ <nl>
+│ │ └── Layout.astro # Global layout wrapper <nl>
+│ ├── pages/ <nl>
+│ │ ├── index.astro # Homepage <nl>
+│ │ ├── about.astro <nl>
+│ │ ├── contact.astro <nl>
+│ │ ├── services/ <nl>
+│ │ │ ├── index.astro # Services page <nl>
+│ │ │ └── [slug].astro # Individual service details <nl>
+│ │ ├── projects.astro # Projects gallery <nl>
+│ │ ├── testimonials.astro <nl>
+│ │ └── faq.astro # FAQ toggle page (coming soon) <nl>
+│ ├── styles/ <nl>
+│ │ └── tailwind.css # Tailwind v4 & global styles <nl>
+│ └── data/ <nl>
+│ ├── services.js # Dynamic service data <nl>
+│ └── projects.js # Dynamic project data <nl>
+├── tailwind.config.js # Tailwind theme + plugins <nl>
+├── astro.config.mjs # Astro + Vite config <nl>
+└── wrangler.toml # Cloudflare deployment config <nl>
 
 ---
 
