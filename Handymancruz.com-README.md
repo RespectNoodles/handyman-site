@@ -1,121 +1,120 @@
 # Handyman Cruz — Astro + Tailwind v4
 
-Professional handyman service website for showcasing repairs, builds, and projects across Perth.<nl>
+Professional handyman service website for showcasing repairs, builds, and projects across Perth. <br>
 
 Built with:<nl>
 
-- [Astro](https://astro.build/)<nl>
-- [Tailwind CSS v4](https://tailwindcss.com/docs/installation)<nl>
-- [Vite](https://vitejs.dev/)<nl>
-- [Cloudflare Workers](https://developers.cloudflare.com/workers/)<nl>
-- [Wrangler CLI](https://developers.cloudflare.com/workers/wrangler/)<nl>
+- [Astro](https://astro.build/)
+- [Tailwind CSS v4](https://tailwindcss.com/docs/installation)
+- [Vite](https://vitejs.dev/)
+- [Cloudflare Workers](https://developers.cloudflare.com/workers/)
+- [Wrangler CLI](https://developers.cloudflare.com/workers/wrangler/)
 
 ---
 
 ## 📁 Project Structure
 
-├── public/ <nl>
-│ └── images/ # Static images (textures, icons, lightbox) <nl>
-├── src/ <nl>
-│ ├── components/ # Header, Footer, ParallaxHero, QuoteForm, etc. <nl>
-│ ├── layouts/ <nl>
-│ │ └── Layout.astro # Global layout wrapper <nl>
-│ ├── pages/ <nl>
-│ │ ├── index.astro # Homepage <nl>
-│ │ ├── about.astro <nl>
-│ │ ├── contact.astro <nl>
-│ │ ├── services/ <nl>
-│ │ │ ├── index.astro # Services page <nl>
-│ │ │ └── [slug].astro # Individual service details <nl>
-│ │ ├── projects.astro # Projects gallery <nl>
-│ │ ├── testimonials.astro <nl>
-│ │ └── faq.astro # FAQ toggle page (coming soon) <nl>
-│ ├── styles/ <nl>
-│ │ └── tailwind.css # Tailwind v4 & global styles <nl>
-│ └── data/ <nl>
-│ ├── services.js # Dynamic service data <nl>
-│ └── projects.js # Dynamic project data <nl>
-├── tailwind.config.js # Tailwind theme + plugins <nl>
-├── astro.config.mjs # Astro + Vite config <nl>
-└── wrangler.toml # Cloudflare deployment config <nl>
-
+├── public/ <br>
+│ └── images/ # Static images (textures, icons, lightbox) <br>
+├── src/ <br>
+│ ├── components/ # Header, Footer, ParallaxHero, QuoteForm, etc. <br>
+│ ├── layouts/ <br>
+│ │ └── Layout.astro # Global layout wrapper <br>
+│ ├── pages/ <br>
+│ │ ├── index.astro # Homepage <br>
+│ │ ├── about.astro <br>
+│ │ ├── contact.astro <br>
+│ │ ├── services/ <br>
+│ │ │ ├── index.astro # Services page <br>
+│ │ │ └── [slug].astro # Individual service details <br>
+│ │ ├── projects.astro # Projects gallery <br>
+│ │ ├── testimonials.astro <br>
+│ │ └── faq.astro # FAQ toggle page (coming soon) <br>
+│ ├── styles/ <br>
+│ │ └── tailwind.css # Tailwind v4 & global styles <br>
+│ └── data/ <br>
+│ ├── services.js # Dynamic service data <br>
+│ └── projects.js # Dynamic project data <br>
+├── tailwind.config.js # Tailwind theme + plugins <br>
+├── astro.config.mjs # Astro + Vite config <br>
+└── wrangler.toml # Cloudflare deployment config <br>
 ---
 
 ## 🧱 Setup Instructions
 
-📦 Install Dependencies  <nl>
-   npm install
+📦 Install Dependencies  <br>
+   npm install <br>
 
-🧪 Local Development  <nl>
-   npm run dev<nl>
+🧪 Local Development  
+   npm run dev <br>
    Visit: <http://localhost:4321>
 
-🚀 Deploy to Cloudflare  <nl>
-   Make sure Wrangler is installed:  <nl>
-   npm install -g wrangler  <nl>
-   Then:  <nl>
-   wrangler deploy<nl>
+🚀 Deploy to Cloudflare <br>
+   Make sure Wrangler is installed: <br>
+   npm install -g wrangler <br>
+   Then:  <br>
+   wrangler deploy <br>
 
-🎨 Tailwind Config<nl>
-Tailwind v4 with:<nl>
+🎨 Tailwind Config
+Tailwind v4 with: <br>
 
-Rubik (sans) + Merriweather (serif) fonts<nl>
+Rubik (sans) + Merriweather (serif) fonts <br> 
 
-Dark theme with wood texture background<nl>
+Dark theme with wood texture background <br>
 
-Custom fade-ins + lightbox utility<nl>
+Custom fade-ins + lightbox utility <br>
 
-Plugins: typography, forms, aspect-ratio, line-clamp<nl>
+Plugins: typography, forms, aspect-ratio, line-clamp <br>
 
-###🔎 Debug & Check Status<nl>
-To make sure your site is up to date:<nl>
+###🔎 Debug & Check Status<br>
+To make sure your site is up to date:<br>
 
-###✅ Check local site:<nl>
-Run npm run dev and ensure all pages and components render without error.<nl>
+###✅ Check local site:<br>
+Run npm run dev and ensure all pages and components render without error.<br>
 
-###✅ Check Cloudflare deployment:<nl>
-Run: wrangler pages project list to confirm it's connected.<nl>
-Visit: <https://handymancruz.com><nl>
-Confirm latest changes (refresh cache with Ctrl+Shift+R or ⌘+Shift+R)<nl>
+###✅ Check Cloudflare deployment:<br>
+Run: wrangler pages project list to confirm it's connected.<br>
+Visit: <https://handymancruz.com><br>
+Confirm latest changes (refresh cache with Ctrl+Shift+R or ⌘+Shift+R)<br>
 
-###✅ Check build output:<nl>
-Run:<nl>
-npm run build<nl>
+###✅ Check build output:<br>
+Run:<br>
+npm run build<br>
 
-This should output without errors into /dist.<nl>
+This should output without errors into /dist.<br>
 
-###✅ Check logs/errors (optional):<nl>
-Use [Cloudflare Dashboard → Workers & Pages → Your Site] to view deploy history or errors.<nl>
+###✅ Check logs/errors (optional):<br>
+Use [Cloudflare Dashboard → Workers & Pages → Your Site] to view deploy history or errors.<br>
 
-###🧰 Additional Tips<nl>
-All global styles are now in /src/styles/tailwind.css, loaded via Layout.astro.<nl>
-Avoid @apply in that file unless converting it to .postcss and adding PostCSS config.<nl>
-Use src/data/ to keep project/service entries easy to update.<nl>
+###🧰 Additional Tips: <br>
+All global styles are now in /src/styles/tailwind.css, loaded via Layout.astro.<br>
+Avoid @apply in that file unless converting it to .postcss and adding PostCSS config.<br>
+Use src/data/ to keep project/service entries easy to update.<br>
 
-###💬 Questions / Ideas?<nl>
-Contact: facebook.com/handymancruz<nl>
+###💬 Questions / Ideas?<br>
+Contact: facebook.com/handymancruz<br>
 
 ---
 
-###✅ How to Check Your Site Is *Fully Up To Date*<nl>
+###✅ How to Check Your Site Is *Fully Up To Date*<br>
 
-To confirm everything is fresh and deployed:<nl>
+To confirm everything is fresh and deployed:<br>
 
-###🖥️ Locally:<nl>
+###🖥️ Locally:<br>
 
-- Run `npm run dev`<nl>
-- Visit `http://localhost:4321`<nl>
-- Confirm no broken components, images, or pages.<nl>
+- Run `npm run dev`<br>
+- Visit `http://localhost:4321`<br>
+- Confirm no broken components, images, or pages.<br>
 
 ###🚀 Online:
 
-- Go to `https://handymancruz.com`<nl>
-- Press **Ctrl + Shift + R** (hard refresh)<nl>
-- Confirm new text/images/styles show up<nl>
-- Use browser dev tools > Network tab > disable cache > refresh again<nl>
-- (Optional) Use a phone browser or another device to triple-check<nl>
+- Go to `https://handymancruz.com`<br>
+- Press **Ctrl + Shift + R** (hard refresh)<br>
+- Confirm new text/images/styles show up<br>
+- Use browser dev tools > Network tab > disable cache > refresh again<br>
+- (Optional) Use a phone browser or another device to triple-check<br>
 
-###🧼 Optional cleanup:<nl>
+###🧼 Optional cleanup:<br>
 
-- Clear Cloudflare cache in the dashboard if old assets still appear.<nl>
+- Clear Cloudflare cache in the dashboard if old assets still appear.<br>
 - Double-check your `tailwind.css` file path and make sure **only one global stylesheet is being loaded** in `Layout.astro`.
