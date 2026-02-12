@@ -14,6 +14,7 @@ export default defineConfig({
     tailwind(), // ✅ use @astrojs/tailwind instead of vite plugin
     sentry(),
     spotlight()
+    sentry()
   ],
   vite: {
     resolve: {
