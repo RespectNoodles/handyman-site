@@ -4,7 +4,6 @@ import sitemap from "@astrojs/sitemap";
 import { fileURLToPath } from "url";
 import tailwind from "@astrojs/tailwind";
 import sentry from "@sentry/astro";
-import spotlight from "@spotlightjs/astro";
 
 export default defineConfig({
   site: "https://handymancruz.com", // ✅ set your live domain
@@ -12,8 +11,6 @@ export default defineConfig({
     mdx(),
     sitemap(),
     tailwind(), // ✅ use @astrojs/tailwind instead of vite plugin
-    sentry(),
-    spotlight()
     sentry()
   ],
   vite: {
