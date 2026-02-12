@@ -6,7 +6,7 @@
   "main": "./src/pages/index.js",
   "assets": {
     "directory": "./src",
-    "binding": "ASSETS"
+    "binding": "SITE_ASSETS"
   },
   "observability": {
     "enabled": true
