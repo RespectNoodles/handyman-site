@@ -1,40 +1,45 @@
 ---
 import Layout from '../../layouts/Layout.astro';
-layout: Layout
-title: "Services | Handyman Cruz"
-description: "Explore the wide range of reliable, local handyman services I offer."
+import BaseHead from '../../components/BaseHead.astro';
+
+const services = [
+  {
+    title: 'General Repairs',
+    href: '/services/general-repairs',
+    description: 'Fast, clean fixes for doors, walls, fittings, and everyday issues.'
+  },
+  {
+    title: 'Tiling & Grouting',
+    href: '/services/tiling-grouting',
+    description: 'Re-grouting, crack repair, tile replacement, and finish restoration.'
+  },
+  {
+    title: 'Concreting & Paving',
+    href: '/services/concreting-paving',
+    description: 'Solid surfaces and paved areas designed to last and look sharp.'
+  },
+  {
+    title: 'Ongoing Maintenance',
+    href: '/',
+    description: 'Regular support for homes, rentals, and small businesses.'
+  }
+];
 ---
 
-<section class="relative h-[70vh] bg-fixed bg-center bg-cover" style="background-image: url('/assets/services-hero.jpg');">
-  <div class="absolute inset-0 bg-black/60"></div>
-  <div class="relative z-10 flex flex-col justify-center items-center text-center text-white h-full px-4">
-    <h1 class="text-5xl md:text-6xl font-bold tracking-tight drop-shadow-lg">My Services</h1>
-    <p class="mt-4 text-xl drop-shadow">Craftsmanship that lasts. Local service you can trust.</p>
-  </div>
-</section>
+<Layout title="Services | Handyman Cruz">
+  <BaseHead title="Services | Handyman Cruz" description="Explore the services offered by Handyman Cruz." />
 
-<main class="max-w-6xl mx-auto px-6 py-16 space-y-16">
+  <section class="mx-auto max-w-6xl px-4 py-16 md:px-8">
+    <p class="text-sm uppercase tracking-[0.25em] text-cyan-300">Services</p>
+    <h1 class="mt-3 text-4xl font-extrabold md:text-5xl">Practical services with professional execution.</h1>
 
-  <section class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-    <a href="/services/general-repairs" class="group bg-neutral-800 rounded-lg p-6 shadow hover:shadow-xl transition">
-      <h2 class="text-xl font-bold text-yellow-300 mb-2">General Repairs</h2>
-      <p class="text-neutral-300">Fixing doors, taps, walls — you name it. Quick and clean.</p>
-    </a>
-
-    <a href="/services/tiling-grouting" class="group bg-neutral-800 rounded-lg p-6 shadow hover:shadow-xl transition">
-      <h2 class="text-xl font-bold text-yellow-300 mb-2">Tiling & Grouting</h2>
-      <p class="text-neutral-300">Cracks? Gaps? Re-grouting that stays sealed and clean.</p>
-    </a>
-
-    <a href="/services/concreting-paving" class="group bg-neutral-800 rounded-lg p-6 shadow hover:shadow-xl transition">
-      <h2 class="text-xl font-bold text-yellow-300 mb-2">Concreting & Paving</h2>
-      <p class="text-neutral-300">Solid slabs, clean paths, or paved patios — built to last.</p>
-    </a>
+    <div class="mt-10 grid gap-6 md:grid-cols-2">
+      {services.map((service) => (
+        <a href={service.href} class="rounded-2xl border border-slate-800 bg-slate-900 p-7 transition hover:-translate-y-1 hover:border-cyan-300/50">
+          <h2 class="text-2xl font-bold text-cyan-300">{service.title}</h2>
+          <p class="mt-3 text-slate-300">{service.description}</p>
+        </a>
+      ))}
+    </div>
   </section>
-
-  <div class="text-center">
-    <a href="/#quote" class="inline-block bg-orange-600 hover:bg-orange-700 text-white font-semibold px-6 py-3 rounded shadow transition">
-      Request a Free Quote
-    </a>
-  </div>
-</main>
+</Layout>
