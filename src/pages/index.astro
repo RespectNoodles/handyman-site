@@ -5,110 +5,155 @@ import BaseHead from '../components/BaseHead.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts.js';
 import QuoteForm from '../components/QuoteForm.astro';
 import FAQSection from '../components/FAQSection.astro';
+
+const services = [
+  {
+    title: 'General Repairs',
+    href: '/services/general-repairs',
+    image: '/assets/images/general-repairs.jpg',
+    description: 'Quick fixes for doors, walls, taps, and more.'
+  },
+  {
+    title: 'Tiling & Grouting',
+    href: '/services/tiling-grouting',
+    image: '/assets/images/tiling-grouting.jpg',
+    description: 'Crack repairs, re-grouting, and waterproof finishes.'
+  },
+  {
+    title: 'Concreting & Paving',
+    href: '/services/concreting-paving',
+    image: '/assets/images/concreting-paving.jpg',
+    description: 'Patios, slabs, driveways, and paths built to last.'
+  }
+];
 ---
 
 <Layout>
   <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
 
-<!-- =====================  HERO SECTION  ===================== -->
-<section class="relative h-screen bg-fixed bg-center bg-cover text-white" style="background-image: url('/assets/hero.jpg');">
-  <div class="absolute inset-0 bg-black/70"></div>
+  <section
+    class="relative min-h-screen overflow-hidden bg-black text-white"
+    style="background-image: radial-gradient(circle at 20% 20%, rgba(245, 158, 11, 0.35) 0%, transparent 40%), linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.75)), url('/assets/hero.jpg'); background-size: cover; background-position: center;"
+  >
+    <div class="mx-auto flex min-h-screen max-w-7xl flex-col justify-center px-4 py-20 text-center sm:px-8">
+      <p class="mb-4 text-sm font-semibold uppercase tracking-[0.2em] text-amber-300">Perth Handyman Services</p>
+      <h1 class="mx-auto max-w-4xl text-4xl font-extrabold leading-tight drop-shadow-xl md:text-6xl">
+        Reliable handyman work done right the first time
+      </h1>
+      <p class="mx-auto mt-6 max-w-2xl text-lg text-neutral-200 md:text-xl">
+        Fast response, clear communication, and quality workmanship for repairs, tiling, and outdoor jobs.
+      </p>
 
-  <div class="relative z-10 flex flex-col justify-center items-center h-full text-center px-4 space-y-6">
-    <h1 class="text-5xl md:text-6xl font-extrabold drop-shadow-xl">Handyman Cruz</h1>
-    <p class="text-xl md:text-2xl max-w-xl mx-auto text-neutral-200">
-      Reliable. Skilled. Local. Your go-to handyman in Perth.
-    </p>
+      <div class="mx-auto mt-8 flex w-full max-w-3xl flex-wrap justify-center gap-4">
+        <a href="#quote" class="rounded-full bg-amber-500 px-6 py-3 font-semibold text-black transition hover:bg-amber-400">
+          Request a Free Quote
+        </a>
+        <a href="/projects" class="rounded-full bg-white px-6 py-3 font-semibold text-black transition hover:bg-neutral-200">
+          View My Projects
+        </a>
+        <a href="/services" class="rounded-full border border-white px-6 py-3 font-semibold transition hover:bg-white hover:text-black">
+          Explore Services
+        </a>
+      </div>
 
-    <div class="flex flex-wrap justify-center gap-4 mt-6">
-      <a href="#quote" class="bg-brand-orange hover:bg-orange-700 text-white font-semibold px-6 py-3 rounded-full transition">
-        Request a Free Quote
-      </a>
-      <a href="/projects" class="bg-white text-black hover:bg-gray-200 font-semibold px-6 py-3 rounded-full transition">
-        View My Projects
-      </a>
-      <a href="/services" class="border border-white hover:bg-white hover:text-black px-6 py-3 rounded-full transition">
-        Services I Offer
-      </a>
+      <div class="mx-auto mt-12 grid w-full max-w-4xl gap-4 rounded-2xl border border-white/20 bg-white/10 p-4 backdrop-blur-sm md:grid-cols-3">
+        <div class="rounded-xl bg-black/20 p-4">
+          <p class="text-3xl font-bold">24h</p>
+          <p class="text-sm text-neutral-200">Average response time</p>
+        </div>
+        <div class="rounded-xl bg-black/20 p-4">
+          <p class="text-3xl font-bold">100+</p>
+          <p class="text-sm text-neutral-200">Completed local jobs</p>
+        </div>
+        <div class="rounded-xl bg-black/20 p-4">
+          <p class="text-3xl font-bold">5★</p>
+          <p class="text-sm text-neutral-200">Customer-first service</p>
+        </div>
+      </div>
     </div>
-  </div>
-</section>
- 
+  </section>
 
-  <main class="max-w-7xl mx-auto px-4 md:px-10 py-20 space-y-24">
-
-    <!-- ========== ABOUT PREVIEW ========== -->
-    <section id="about" class="text-center">
-      <h2 class="text-3xl font-semibold mb-4">About Me</h2>
-      <p class="max-w-2xl mx-auto text-lg mb-6">I’m Cruz, a local handyman with a passion for clean work, reliable service, and honest craftsmanship.<nl>
-Whether it’s a quick fix or a bigger project, I’ve got you covered.<nl>
-I started my career in handyman, earthmoving, and construction work, gaining practical problem-solving skills and resilience.<nl>
-Over time, I transitioned into IT and cybersecurity, and I’m now studying ICT50220 – Diploma of Information Technology.<nl>
-I’ve built hands-on experience through projects like configuring WSL2, creating Python/Flask dashboards, automating tasks with scripts, and securing networks.<nl>
-I’m passionate about helping others navigate technology safely, applying versatile skills that go beyond traditional tech support.<nl>
-My journey reflects adaptability, dedication, and continuous learning, and I’m eager to contribute to roles where I can solve challenges, support users, and make a meaningful impact in IT and cybersecurity.<nl>
-I thrive on learning new tools, improving systems, and ensuring tech empowers people effectively.</p>
-      <a href="/about" class="inline-block border border-black px-5 py-2 rounded-full hover:bg-black hover:text-white transition">Read More</a>
+  <main class="mx-auto max-w-7xl space-y-24 px-4 py-20 md:px-10">
+    <section id="about" class="rounded-2xl bg-neutral-50 p-8 text-center shadow-sm md:p-12">
+      <h2 class="text-3xl font-bold text-neutral-900">About Me</h2>
+      <p class="mx-auto mt-5 max-w-3xl text-lg leading-relaxed text-neutral-700">
+        I’m Cruz, a Perth local with a practical background in handyman work, earthmoving, and construction. I bring
+        dependable workmanship, honest communication, and a problem-solving mindset to every job—whether it’s a small
+        repair or a larger improvement project.
+      </p>
+      <p class="mx-auto mt-4 max-w-3xl text-base leading-relaxed text-neutral-600">
+        My experience in IT and cybersecurity also sharpens how I plan, document, and deliver work cleanly and
+        efficiently. You’ll always know what to expect, from first quote to final clean-up.
+      </p>
+      <a
+        href="/about"
+        class="mt-7 inline-block rounded-full border border-neutral-900 px-6 py-2.5 font-semibold text-neutral-900 transition hover:bg-neutral-900 hover:text-white"
+      >
+        Read More
+      </a>
     </section>
 
-    <!-- ========== SERVICES GRID ========== -->
-    <section id="services">
-      <h2 class="text-3xl font-bold text-center text-yellow-500 mb-12">Core Services</h2>
+    <section id="services" aria-labelledby="core-services-title">
+      <div class="mb-10 flex items-end justify-between gap-4">
+        <h2 id="core-services-title" class="text-3xl font-bold text-neutral-900">Core Services</h2>
+        <a href="/services" class="text-sm font-semibold text-amber-700 hover:text-amber-600">View all services →</a>
+      </div>
+
       <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-        <a href="/services/general-repairs" class="group bg-white rounded-lg overflow-hidden shadow hover:shadow-xl transition">
-          <img src="/public/assets/images/general-repairs.jpg" alt="General Repairs" class="h-48 w-full object-cover group-hover:scale-105 transition-transform duration-300" />
-          <div class="p-5">
-            <h3 class="text-xl font-semibold">General Repairs</h3>
-            <p class="text-gray-600 mt-2">Quick fixes for doors, walls, taps, and more.</p>
-          </div>
-        </a>
-        <a href="/services/tiling-grouting" class="group bg-white rounded-lg overflow-hidden shadow hover:shadow-xl transition">
-          <img src="/public/assets/images/tiling-grouting.jpg" alt="Tiling & Grouting" class="h-48 w-full object-cover group-hover:scale-105 transition-transform duration-300" />
-          <div class="p-5">
-            <h3 class="text-xl font-semibold">Tiling & Grouting</h3>
-            <p class="text-gray-600 mt-2">Crack repairs, grouting, and waterproof finishes.</p>
-          </div>
-        </a>
-        <a href="/services/concreting-paving" class="group bg-white rounded-lg overflow-hidden shadow hover:shadow-xl transition">
-          <img src="/public/assets/images/concreting-paving.jpg" alt="Concreting & Paving" class="h-48 w-full object-cover group-hover:scale-105 transition-transform duration-300" />
-          <div class="p-5">
-            <h3 class="text-xl font-semibold">Concreting & Paving</h3>
-            <p class="text-gray-600 mt-2">Patios, slabs, driveways, and more — built to last.</p>
-          </div>
-        </a>
+        {services.map((service) => (
+          <a href={service.href} class="group overflow-hidden rounded-2xl border border-neutral-200 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-xl">
+            <img
+              src={service.image}
+              alt={service.title}
+              class="h-48 w-full object-cover transition-transform duration-300 group-hover:scale-105"
+              loading="lazy"
+            />
+            <div class="p-5">
+              <h3 class="text-xl font-semibold text-neutral-900">{service.title}</h3>
+              <p class="mt-2 text-neutral-600">{service.description}</p>
+            </div>
+          </a>
+        ))}
       </div>
     </section>
 
-    <!-- ========== TESTIMONIALS ========== -->
-    <section id="testimonials" class="bg-neutral-100 py-16 rounded-lg">
-      <h2 class="text-3xl font-bold text-center text-neutral-800 mb-10">Client Testimonials</h2>
-      <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-        <div class="bg-white p-6 rounded shadow text-left">
-          <p class="italic">“Cruz fixed our fence like new — super fast and professional!”</p>
-          <p class="mt-4 font-semibold">— Steven, Kinross</p>
+    <section id="testimonials" class="rounded-2xl bg-neutral-100 px-6 py-14 md:px-10">
+      <h2 class="text-center text-3xl font-bold text-neutral-800">Client Testimonials</h2>
+      <div class="mx-auto mt-10 grid max-w-6xl gap-6 md:grid-cols-3">
+        <div class="rounded-xl bg-white p-6 shadow-sm">
+          <p class="italic text-neutral-700">“Cruz fixed our fence like new — super fast and professional!”</p>
+          <p class="mt-4 font-semibold text-neutral-900">— Steven, Kinross</p>
         </div>
-        <div class="bg-white p-6 rounded shadow text-left">
-          <p class="italic">“We’re beyond happy with the tiling job. Looks amazing.”</p>
-          <p class="mt-4 font-semibold">— Susan, Jindalee</p>
+        <div class="rounded-xl bg-white p-6 shadow-sm">
+          <p class="italic text-neutral-700">“We’re beyond happy with the tiling job. Looks amazing.”</p>
+          <p class="mt-4 font-semibold text-neutral-900">— Susan, Jindalee</p>
         </div>
-        <div class="bg-white p-6 rounded shadow text-left">
-          <p class="italic">“Turned up on time, great work ethic, and left everything clean.”</p>
-          <p class="mt-4 font-semibold">— Melissa, Joondalup</p>
+        <div class="rounded-xl bg-white p-6 shadow-sm">
+          <p class="italic text-neutral-700">“Turned up on time, worked hard, and left everything spotless.”</p>
+          <p class="mt-4 font-semibold text-neutral-900">— Melissa, Joondalup</p>
         </div>
       </div>
     </section>
 
-    <!-- ========== CTA FOR QUOTE ========== -->
-    <section class="text-center bg-black text-white rounded-lg py-16 px-6">
-      <h2 class="text-3xl font-bold mb-4">Ready to Get Started?</h2>
-      <p class="mb-6 text-lg">Request a free quote today — I’ll get back to you within 24 hours.</p>
-      <a href="#quote" class="inline-block bg-yellow-500 hover:bg-yellow-600 text-black font-semibold px-6 py-3 rounded-full transition">Request a Quote</a>
+    <section class="rounded-2xl bg-neutral-900 px-6 py-14 text-center text-white md:px-10">
+      <h2 class="text-3xl font-bold">Ready to Get Started?</h2>
+      <p class="mx-auto mt-4 max-w-2xl text-lg text-neutral-200">
+        Request a free quote today and I’ll get back to you within 24 hours.
+      </p>
+      <div class="mt-7 flex flex-wrap justify-center gap-4">
+        <a href="#quote" class="rounded-full bg-amber-400 px-6 py-3 font-semibold text-black transition hover:bg-amber-300">Request a Quote</a>
+        <a href="tel:+61000000000" class="rounded-full border border-white/60 px-6 py-3 font-semibold transition hover:bg-white hover:text-black">Call Now</a>
+      </div>
     </section>
 
-    <!-- ========== QUOTE FORM ========== -->
-    <section id="quote">
+    <section id="quote" class="scroll-mt-24" aria-labelledby="quote-title">
+      <h2 id="quote-title" class="mb-5 text-3xl font-bold text-neutral-900">Get Your Free Quote</h2>
       <QuoteForm />
     </section>
 
+    <section aria-labelledby="faq-title" class="rounded-2xl border border-neutral-200 bg-white p-6 md:p-10">
+      <h2 id="faq-title" class="mb-6 text-3xl font-bold text-neutral-900">Frequently Asked Questions</h2>
+      <FAQSection />
+    </section>
   </main>
 </Layout>
