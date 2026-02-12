@@ -1,6 +1,13 @@
 ---
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import '../styles/tailwind.css';
+
+interface Props {
+  title?: string;
+}
+
+const { title = 'Handyman Cruz | Visual Resume' } = Astro.props;
 ---
 
 <!DOCTYPE html>
@@ -8,16 +15,17 @@ import Footer from '../components/Footer.astro';
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#1f2937" />
-    <link rel="stylesheet" href="/styles/tailwind.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
+    <meta name="theme-color" content="#020617" />
+    <meta name="color-scheme" content="dark" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap"
       rel="stylesheet"
     />
-    <title>Handyman Cruz</title>
+    <title>{title}</title>
   </head>
-  <body class="bg-neutral-950 text-white font-sans tracking-tight overflow-x-hidden">
+  <body class="bg-slate-950 font-sans tracking-tight text-slate-100">
     <Header />
     <main class="pt-20">
       <slot />
