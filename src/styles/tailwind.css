@@ -1,75 +1,15 @@
-/* tailwind.css or global.postcss */
-@import 'tailwindcss/preflight';
-@import 'tailwindcss/components';
-@import 'tailwindcss/utilities';
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-/* Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&display=swap');
-
-/* Custom variables */
 :root {
-  --brand-yellow: #facc15;
-  --brand-orange: #ea580c;
+  color-scheme: dark;
 }
 
-html { scroll-behavior: smooth; }
+html {
+  scroll-behavior: smooth;
+}
 
 body {
-  font-family: 'Rubik', sans-serif;
-  background-image: url('/images/texture-wood.jpg');
-  background-size: cover;
-  background-attachment: fixed;
-  background-blend-mode: multiply;
-  background-color: #1a1a1a;
-  color: #f8fafc;
-  line-height: 1.7;
-}
-
-h1, h2 {
-  font-family: 'Merriweather', serif;
-}
-
-h1 {
-  font-size: 2.25rem;
-  @media (min-width: 768px) {
-    font-size: 3rem;
-  }
-}
-h2 {
-  font-size: 1.875rem;
-  @media (min-width: 768px) {
-    font-size: 2.25rem;
-  }
-}
-
-/* Fade-in util */
-.fade-in {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.6s, transform 0.6s;
-}
-.fade-in.show {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* Lightbox */
-.lightbox-backdrop {
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,0.8);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 1000;
-  opacity: 0;
-  transition: opacity 0.3s;
-}
-.lightbox-backdrop.show {
-  opacity: 1;
-}
-.lightbox-img {
-  max-width: 90vw;
-  max-height: 90vh;
-  border-radius: 8px;
+  line-height: 1.6;
 }
