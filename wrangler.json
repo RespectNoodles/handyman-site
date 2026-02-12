@@ -2,8 +2,5 @@
   "name": "handyman-site",
   "compatibility_date": "2026-02-12",
   "compatibility_flags": ["nodejs_compat"],
-  "pages_build_output_dir": "dist",
-  "observability": { "enabled": true },
-  "upload_source_maps": true
+  "pages_build_output_dir": "dist"
 }
-
