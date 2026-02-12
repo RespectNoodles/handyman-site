@@ -1,3 +1,60 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import BaseHead from '../components/BaseHead.astro';
+---
+
+<Layout title="Contact Me | Handyman Cruz">
+  <BaseHead
+    title="Contact Me | Handyman Cruz"
+    description="Connect with Cruz for handyman services, project consulting, and technology-driven problem solving."
+  />
+
+  <section class="relative isolate min-h-[calc(100vh-5rem)] overflow-hidden">
+    <div class="absolute inset-0 -z-20 bg-[radial-gradient(circle_at_20%_20%,rgba(34,211,238,0.25),transparent_35%),radial-gradient(circle_at_80%_0%,rgba(59,130,246,0.25),transparent_40%),linear-gradient(120deg,#020617,#0f172a,#111827)]"></div>
+    <div class="absolute inset-0 -z-10 opacity-30 [background-image:linear-gradient(rgba(56,189,248,0.2)_1px,transparent_1px),linear-gradient(90deg,rgba(56,189,248,0.2)_1px,transparent_1px)] [background-size:36px_36px]"></div>
+
+    <div class="mx-auto grid min-h-[calc(100vh-5rem)] w-full max-w-7xl items-center gap-8 px-4 py-12 md:grid-cols-[1.2fr_0.9fr] md:px-8">
+      <article class="rounded-2xl border border-cyan-300/30 bg-slate-900/70 p-8 shadow-2xl shadow-cyan-500/10 backdrop-blur">
+        <p class="text-sm uppercase tracking-[0.25em] text-cyan-300">Contact Me</p>
+        <h1 class="mt-3 text-4xl font-extrabold leading-tight md:text-5xl">Cruz — Builder, problem solver, and tech-focused operator.</h1>
+        <p class="mt-5 max-w-2xl text-slate-300">
+          I help homeowners and small businesses with reliable handyman services while bringing a technology mindset to every
+          project: clear process, clean delivery, and quality outcomes.
+        </p>
+
+        <div class="mt-8 grid gap-4 sm:grid-cols-2">
+          <div class="rounded-xl border border-slate-700 bg-slate-950/70 p-4">
+            <h2 class="font-semibold text-cyan-300">Interests</h2>
+            <p class="mt-2 text-sm text-slate-300">Construction, smart-home upgrades, cybersecurity, automation, and practical design.</p>
+          </div>
+          <div class="rounded-xl border border-slate-700 bg-slate-950/70 p-4">
+            <h2 class="font-semibold text-cyan-300">Best For</h2>
+            <p class="mt-2 text-sm text-slate-300">Repairs, small renovations, project planning, and ongoing maintenance.</p>
+          </div>
+        </div>
+      </article>
+
+      <aside class="rounded-2xl border border-cyan-300/30 bg-slate-950/85 p-8 shadow-2xl shadow-cyan-500/10">
+        <h2 class="text-2xl font-bold">Direct Contact</h2>
+        <ul class="mt-6 space-y-5 text-slate-200">
+          <li>
+            <p class="text-xs uppercase tracking-widest text-cyan-300">Phone</p>
+            <a class="text-lg hover:text-cyan-300" href="tel:+61427706676">+61 427 706 676</a>
+          </li>
+          <li>
+            <p class="text-xs uppercase tracking-widest text-cyan-300">Email</p>
+            <a class="text-lg break-all hover:text-cyan-300" href="mailto:handymancruz3@gmail.com">handymancruz3@gmail.com</a>
+          </li>
+          <li>
+            <p class="text-xs uppercase tracking-widest text-cyan-300">Location</p>
+            <p class="text-lg">Perth, Western Australia</p>
+          </li>
+          <li>
+            <p class="text-xs uppercase tracking-widest text-cyan-300">Social</p>
+            <a href="https://www.facebook.com/profile.php?id=61576995701363" target="_blank" rel="noreferrer" class="text-lg hover:text-cyan-300">Facebook Profile</a>
+          </li>
+        </ul>
+      </aside>
+    </div>
+  </section>
+</Layout>
