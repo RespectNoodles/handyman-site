@@ -1,17 +1,26 @@
 ---
-// src/components/Header.astro
+const navItems = [
+  { href: '/home', label: 'Home' },
+  { href: '/services', label: 'Services' },
+  { href: '/projects', label: 'Projects' },
+  { href: '/about', label: 'About Me' },
+  { href: '/', label: 'Contact Me' }
+];
 ---
-<nav                                              class="fixed top-0 w-full z-50 transition-all bg-transparent text-white py-4 px-6 flex justify-between items-center">
-  <a href="/"                                     class="text-2xl font-bold tracking-tight">Handyman Cruz</a>
-  <ul                                             class="hidden md:flex space-x-6 text-sm font-medium">
-    <li><a href="/about"                          class="underline hover:text-yellow-300">About</a></li>
-    <li><a href="/blog/my-handyman-site-journey"  class="underline hover:text-yellow-300">My Website Journey</a></li>
-    <li><a href="/services"                       class="underline hover:text-yellow-300">Services</a></li>
-    <li><a href="/projects"                       class="underline hover:text-yellow-300">Projects</a></li>
-    <li><a href="/#quote"                         class="underline hover:text-yellow-300">Quote</a></li>
-    <li><a href="/contact"                        class="underline hover:text-yellow-300">Contact</a></li>
-  </ul>
-</nav>
+
+<header class="fixed inset-x-0 top-0 z-50 border-b border-cyan-400/20 bg-slate-950/85 backdrop-blur">
+  <nav class="mx-auto flex w-full max-w-7xl items-center justify-between px-4 py-4 md:px-8">
+    <a href="/" class="text-lg font-bold tracking-[0.2em] text-cyan-300 md:text-xl">HANDYMAN CRUZ</a>
+
+    <ul class="hidden items-center gap-6 text-sm font-medium text-slate-100 md:flex">
+      {navItems.map((item) => (
+        <li>
+          <a href={item.href} class="transition hover:text-cyan-300">{item.label}</a>
+        </li>
+      ))}
+    </ul>
+  </nav>
+</header>
 
 <style is:global>
   html {
