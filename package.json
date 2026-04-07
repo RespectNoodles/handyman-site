@@ -51,7 +51,7 @@
     "postcss": "^8.4.38",
     "tailwindcss": "^3.4.17",
     "webpack": "^5.0.0",
-    "webpack-cli": "^5.0.0"
+    "webpack-cli": "^5.0.0",
     "wrangler": "4.16.1"
   }
 }
