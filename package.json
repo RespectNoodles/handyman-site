@@ -40,7 +40,6 @@
     "astro-lightgallery": "^1.0.2",
     "astro-swiper": "^1.0.1",
     "typescript": "5.8.3"
-    
   },
   "devDependencies": {
     "@rollup/pluginutils": "^5.1.4",
